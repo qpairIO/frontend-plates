@@ -1,0 +1,100 @@
+<div id="cost-analysis" layout="column" flex="flex" class="scrollable screen-content" style="overflow: visible;">
+  <mat-toolbar class="layout-align-start-center layout-row">
+    <i class="glyph-icon icon-dollar" style="color:Green" title=".icon-dollar"></i>
+    <span clas="title"> Cost Analysis </span>
+  </mat-toolbar>
+  <mat-card>
+    <div class="row">
+      <div class="col-xs-12">
+        <mat-radio-group ng-model="model.instanceMode" layout="row">
+          <mat-radio-button value="onDemandInstances " class="md-primary">On Demand Instances</mat-radio-button>
+          <mat-radio-button value="reservedInstances" class="md-primary"> Reserved instances</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <label>Instances</label><br/><span>Create and edit instances to build your scenario.</span>
+      </div>
+      <div layout-gt-sm="row" layout-align="end center" class="col-md-6"><a href="javascript:void(0)" (click)="crudInstance()" class="btn btn-primary">Add instance to scenario</a></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <table datatable [dtOptions]="dtOptions" class="row-border hover">
+          <thead>
+            <tr>
+              <th>Cloud vendor</th>
+              <th>Cloud</th>
+              <th>Instance type</th>
+              <th>Operating system</th>
+              <th>Quantity</th>
+              <th>&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let instance of data.instances">
+              <td>{{instance.cloudVendor}}</td>
+              <td>{{instance.cloud}}</td>
+              <td>{{instance.instanceType}}</td>
+              <td>{{instance.operatingSystem}}</td>
+              <td>{{instance.quantity}}</td>
+              <td><a href="#" (click)="crudInstance(instance)"><i class="fa fa-pencil">&nbsp;</i></a><a href="#"><i class="fa fa-trash"></i></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-md-6 col-xs-12">
+            <div class="col-xs-12">
+              <a href="javascript:void(0)" [ngbPopover]="patternsMenuTemplate" #patternPopver="ngbPopover" placement="top-left" popoverTitle="Patterns menu" class="patterns-btn"><i class="fa fa-plus"></i></a><span>&nbsp; Patterns</span></div>
+            <div class="col-xs-12 patterns-list">
+              <div class="wrap-line"></div>
+              <div *ngFor="let pattern of model.patterns" class="col-xs-12">
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="pattern-item"><span>{{pattern.title}}</span>
+                      <div class="line"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="pattern-item"><span>Seasonal spike</span>
+                      <div class="line"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-xs-12">
+            <div class="col-xs-12"><a href="javascript:void(0)" (click)="addReservedInstance()" class="patterns-btn"><i class="fa fa-plus"></i></a><span>&nbsp; Reserved Instances</span></div>
+            <div class="col-xs-12 patterns-list">
+              <div class="wrap-line"></div>
+              <div *ngFor="let instance of model.reservedInstances" class="col-xs-12">
+                <div class="col-xs-12">
+                  <div class="row">
+                    <div class="pattern-item"><span>{{instance.quantity}}x {{instance.package.title}}</span>
+                      <div class="line"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>
+<ng-template #patternsMenuTemplate>
+  <ul class="patterns-menu">
+    <li *ngFor="let pattern of data.patterns" (click)="patternPopver.close();addPattern(pattern)">
+      <label>{{pattern.title}}</label><br/><span>{{pattern.description}}</span>
+    </li>
+    <li><a class="btn btn-primary btn-block">Create a pattern</a></li>
+  </ul>
+</ng-template>

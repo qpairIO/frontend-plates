@@ -1,0 +1,84 @@
+<div id="model-usage-analisys" layout="column" flex="flex" class="scrollable screen-content" style="overflow: visible;">
+  <mat-toolbar class="layout-align-start-center layout-row">
+    <i title=".icon-bar-chart" style="color:Pink;" class="glyph-icon icon-bar-chart"></i>
+    <span clas="title"> Usage Models & Load Calculators </span>
+  </mat-toolbar>
+  <mat-card style="overflow: auto">
+		<form #usageModelForm="ngForm" novalidate="novalidate" class="usage-model-form">
+			<div class="row">
+        <div class="col-md-12">
+          <label>How many users per day ?</label>
+        </div>
+        <div class="form-group">
+          <div class="col-md-6">
+          	<label><small>Number of users</small></label>
+            <input type="number" required="true" class="form-control" [(ngModel)]="model.noOfUsers" (ngModelChange)="modelChange()" name="noOfUsers">
+          </div>
+          <div class="col-md-6">
+          	<label><small>Per</small></label>
+            <select class="form-control" [(ngModel)]="model.period" (ngModelChange)="modelChange()" name="period">
+            	<option *ngFor="let p of period" [value]="p">{{p.name}}</option>
+            </select>
+          </div>
+        </div>
+    	</div>
+    	<div class="row">
+        <div class="col-md-12">
+          <label>What is the Peak load ?</label>
+        </div>
+        <div class="form-group">
+          <div class="col-md-6">
+          	<label><small>Average Peak Load</small></label>
+            <input type="number" class="form-control" [(ngModel)]="model.averagePeakLoad" [min]="model.minAveragePeakLoad" (ngModelChange)="modelChange()" name="averagePeakLoad">
+            <label style="margin: 0" [hidden]="!model.minAveragePeakLoad"><small>Min. {{model.minAveragePeakLoad}} per hour</small></label>
+          </div>
+        </div>
+    	</div>
+    	<div class="row">
+        <div class="col-md-12">
+          <label>Peak Time</label>
+        </div>
+        <div class="form-group" *ngFor="let pt of model.peakTimes; index as i" [ngStyle]="{ marginBottom: pt.rps ? '30px' : '10px', position: 'relative' }" style="width: calc(100% - 55px)">
+          <div class="col-md-3">
+          	<label><small>Start Time</small></label>
+          	<input type="time" class="form-control" atp-time-picker [(ngModel)]="timePicker[i]" name="timePcker[{{i}}]" (ngModelChange)="timePickerChange(i)"/>
+          </div>
+          <div class="col-md-3">
+          	<label><small>Timezone</small></label>
+          	<select class="form-control" [(ngModel)]="pt.timezone" (ngModelChange)="modelChange()" name="timezone[{{i}}]">
+            	<option *ngFor="let zone of timezones" [value]="zone">{{zone}}</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+          	<label><small>Duration</small></label>
+          	<input type="number" class="form-control" [(ngModel)]="pt.duration" (ngModelChange)="modelChange()" name="duration[{{i}}]">
+          </div>
+          <div class="col-md-3">
+          	<label><small>Period</small></label>
+          	<select class="form-control" [(ngModel)]="pt.period" (ngModelChange)="modelChange()" name="period[{{i}}]">
+            	<option *ngFor="let value of model.period.values" [value]="value">{{value}}</option>
+            </select>
+          </div>
+          <button (click)="removePeakTime(i)" class="btn btn-default remove" *ngIf="model.peakTimes.length > 1"><i class="fa fa-trash"></i></button>
+          <label class="target-rps" [hidden]="!pt.rps"><small>Target RPS is {{pt.rps}}</small></label>
+        </div>
+        <div class="form-group">
+        	<div class="col-xs-12">
+        		<button (click)="addPeakTime()" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+        	</div>
+        </div>
+    	</div>
+    </form>
+  </mat-card>
+  <mat-card class="layout-column flex">
+      <span style="background: none;height: 30px;line-height: 30px;font-size: 20px" class="content-box-header"> 
+        LOAD MODEL PER {{model.period.name.toUpperCase()}}
+        <span data-toggle="buttons" class="btn-group btn-group-md float-right"><a routerLink="/calibration" class="btn btn-default">Calibrate</a></span>
+      </span>
+      <div class="layout-row flex" style="position:relative">
+        <div id="usage-model-chart" style="position:absolute;top:0;right:0;left:0;bottom:0">
+            <svg style="width:100%;height:100%"></svg>
+        </div>
+      </div>
+  </mat-card>
+</div>

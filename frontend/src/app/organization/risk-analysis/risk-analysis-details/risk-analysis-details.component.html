@@ -1,0 +1,2 @@
+<div class="text-center" [hidden]="!loading"><br/><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><br/></div>
+<iframe [hidden]="loading" src="https://s3.amazonaws.com/loadswarmjmx/scout2-report/report.html" (load)="onViewLoad()"></iframe>

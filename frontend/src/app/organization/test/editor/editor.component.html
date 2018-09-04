@@ -1,0 +1,53 @@
+<div layout="column" flex="flex" style="height:100%">
+    <div class="bread-crumb" layout="row" layout-align="start center" style="width: 100%">
+      <div class="feature" ui-sref="app">All Test&nbsp;</div>
+      <div class="fa fa-chevron-right"></div>
+      <div class="name">Test name</div><span flex="flex"></span>
+      <button class="btn btn-info" (click)="saveContent()" [disabled]="isSaving">Save</button>
+    </div>
+    <div *ngIf="loading" style="background: #ddd;display:table;margin: 0 auto">Loading XML content!</div>
+    <div *ngIf="saving" style="background: #ddd;display:table;margin: 0 auto">Saving XML content!</div>
+    <div class="editor" layout="row" [hidden]="loading" flex="flex">
+      <div class="side-bar" flex="40">
+        <div class="jmx-expandable" node="groupChild" content="content" *ngFor="let node of threadGroupChildren; let i = index" level="0"  id="node_{{i}}">
+            <div class="pa-{{node.coll}}" layout="row" layout-align="start center" [ngClass]="{'sampler-sel': content.sampler && node.node == content.sampler.node}">
+                <div class="{{node.coll}}"  (click)="expNode(node, i, $event)"></div>
+                <div class="{{node.type}}" flex="flex" (click)="nodeClick(node)">{{node.node.name}}</div>
+                <div class="fa fa-upload" (click)="content.copy(node)" *ngIf="!content.dest"></div>
+                <div class="fa fa-download" (click)="content.paste(node)" *ngIf="content.dest && node.type=='controller'"></div>
+              </div>
+              <div class="inner-expand"  style="overflow: hidden">
+                  
+              </div>
+        </div>
+      </div>
+      <div class="content" flex="60" layout="column">
+        <div flex="flex" *ngIf="content.headers">
+          <div class="header" *ngFor="let header of content.headers" layout="layout" layout-align="start center">
+            <div style="min-width: 200px">{{header.nameNode.val}}</div>
+            <input type="text" [(ngModel)]="header.valueNode.children[0].text"/>
+          </div>
+        </div>
+        <div class="sampler-content" flex="flex" *ngIf="content.sampler" layout="row">
+          <div flex="40" style="overflow-y: auto">
+            <div>
+              <label>Name:</label>
+              <input type="text" [(ngModel)]="content.sampler.node.attr.testname"/>
+            </div>
+            <div *ngFor="let field of samplerFields" >
+              <label *ngIf="containKey(field.key)">{{field.label}}</label>
+              <input *ngIf="containKey(field.key) && content.sampler.byName[field.key].children.length >0" type="{{field.type}}" [(ngModel)]="content.sampler.byName[field.key].children[0].text"/>
+            </div>
+          </div>
+          <div flex="flex" style="overflow-y: auto; padding-left: 20px">
+            <div>{{isParameter ? "Body Data:":"Parameters:"}}</div>
+            <div *ngFor="let param of content.sampler.byName['HTTPsampler.Arguments'].children[0].children" layout="row">
+              <div flex="40" *ngIf="param.children[1].attr.name == 'Argument.name'; let isParameter = false">{{param.children[1].val}}:</div>
+              <input flex="flex" *ngIf="param.children[1].attr.name == 'Argument.name'" type="text" [(ngModel)]="param.children[2].children[0].text"/>
+              <textarea *ngIf="param.children[1].attr.name == 'Argument.value'; let isParameter = true" [(ngModel)]="param.children[1].children[0].text" ></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

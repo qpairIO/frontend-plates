@@ -1,0 +1,6 @@
+<div class="jmeter-logs scrollable">
+  <div *ngIf="!loadingLogs">{{logs}}</div>
+  <div *ngIf="loadingLogs">
+    <h4>Please wait while we retrieve the logs</h4>
+  </div>
+</div>

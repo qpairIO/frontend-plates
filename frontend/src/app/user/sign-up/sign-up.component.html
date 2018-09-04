@@ -1,0 +1,27 @@
+ <div id="form-page">
+  <div class="main-form" id="register-form">
+    <h2 class="text-center">Register</h2><br/>
+    <form name="registerForm">
+      <div class="input-group form-group"><span class="input-group-addon">Organization name</span>
+        <input class="form-control" [(ngModel)]="newUser.organizationName" name="organizationName" type="text" required="required"/>
+      </div>
+      <div class="input-group form-group"><span class="input-group-addon">First Name</span>
+        <input class="form-control" [(ngModel)]="newUser.firstName" name="firstName" type="text" required="required"/>
+      </div>
+      <div class="input-group form-group"><span class="input-group-addon">Last Name</span>
+        <input class="form-control" [(ngModel)]="newUser.lastName" name="firstName" type="text" required="required"/>
+      </div>
+      <div class="input-group form-group"><span class="input-group-addon">Email</span>
+        <input class="form-control" [(ngModel)]="newUser.email" name="email" type="email" required="required"/>
+      </div>
+      <div class="input-group form-group"><span class="input-group-addon">Password</span>
+        <input class="form-control" [(ngModel)]="password" type="password" name="password" required="required"/>
+      </div>
+      <div>
+        <button class="btn btn-success" style="width: 100%" (click)="doSignUp()">Submit</button>
+      </div>
+    </form>
+    <div class="auth-error">
+    </div>
+  </div>
+</div>

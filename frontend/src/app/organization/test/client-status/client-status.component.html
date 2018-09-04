@@ -1,0 +1,10 @@
+<div class="jmeter-logs scrollable">
+  <div *ngIf="!loadingLogs">{{logs}}</div>
+  <div *ngIf="loadingLogs">
+    <h4  style="width:100%">Please wait while we retrieve the logsdiv(layout, layout-wrap, flex, style="height: 100%;")</h4>
+  </div>
+  <div class="loading-screen text-center flex" *ngIf="loading"><br/><i class="fa fa-spinner fa-pulse fa-3x fa-fw" [hidden]="loadingError"></i>
+    <h3 *ngIf="loadingError" style="width:100%">There is an error when getting data. Please try again later.</h3><br/>
+  </div>
+  <iframe class="grafana-graph" [hidden]="loading" style="width: 100%; height: 100%" frameborder="0" [src]='sanitizer.bypassSecurityTrustResourceUrl(iframeUrl)'></iframe>
+</div>

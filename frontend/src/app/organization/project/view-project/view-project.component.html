@@ -1,0 +1,391 @@
+<div class="single-project-page" layout="layout" flex="flex">
+  <div class="sidebar" id="sidebar" flex="33" layout="column">
+    <mat-card class="content-box" flex="flex" layout="column">
+      <h3 class="box-title" layout="layout" layout-align="start center">
+        <strong flex="flex">Grid Settings</strong>
+      </h3>
+      <div class="content-box-wrapper scrollable" flex="flex">
+        <mat-accordion>
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h3 class="acordition" layout="layout" layout-align="start center">
+                  <strong flex="flex">Labs</strong>
+                  <button class="btn btn-default btn-new" (click)="changeShowingType('new-grid'); $event.stopPropagation();" [ngClass]="{active: showingType=='new-grid'}">
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </h3>
+              </mat-panel-title>
+
+            </mat-expansion-panel-header>
+            <div class="content" [ngClass]="{active: selectedType=='grid'}">
+              <h4 [hidden]="grids.length">There is no Labs</h4>
+              <div class="grids-table" layout="layout" style="margin: 0 10px" *ngIf="grids.length">
+                <table class="table table-bordered table-striped table-2-columns" md-table="md-table" flex="flex">
+                  <thead md-head="md-head" md-order="query.order">
+                    <tr md-row="md-row">
+                      <th md-column="md-column" style="text-align: center">NAME</th>
+                      <th md-column="md-column" style="text-align: center">DESCRIPTION</th>
+                      <th md-column="md-column" style="text-align: center"></th>
+                    </tr>
+                  </thead>
+                  <tbody md-body="md-body">
+                    <tr md-row="md-row" *ngFor="let item of grids" (click)="selectGrid(item)" [ngClass]="{active: selectedGrid && selectedGrid.id == item.id}">
+                      <td md-cell="md-cell" style="text-align: center">{{item.name}}</td>
+                      <td md-cell="md-cell" style="text-align: center">{{item.description}}</td>
+                      <td md-cell="md-cell" style="text-align: center">
+                        <a (click)="removeGrid(item); $event.stopPropagation();">
+                          <i class="fa fa-remove"></i>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h3 class="acordition" layout="layout" layout-align="start center">
+                  <strong flex="flex">Releases</strong>
+                  <button class="btn btn-default" (click)="changeShowingType('new-release'); $event.stopPropagation();" [ngClass]="{active: showingType=='new-release'}">
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </h3>
+              </mat-panel-title>
+
+            </mat-expansion-panel-header>
+            <div class="content" [ngClass]="{active: selectedType=='release'}">
+              <div class="grids-table" layout="layout" style="margin: 0 10px">
+                <table class="table table-bordered table-striped table-2-columns" md-table="md-table" flex="flex">
+                  <thead md-head="md-head" md-order="query.order">
+                    <tr md-row="md-row">
+                      <th md-column="md-column" style="text-align: center"></th>
+                      <th md-column="md-column" style="text-align: center">NAME</th>
+                      <th md-column="md-column" style="text-align: center">DESCRIPTION</th>
+                      <th md-column="md-column" style="text-align: center">DATE</th>
+                    </tr>
+                  </thead>
+                  <tbody md-body="md-body">
+
+                    <tr md-row="md-row" *ngFor="let item of releases">
+                      <td md-cell="md-cell" style="text-align: center">
+                        <input #widget class='with-gap' name='selectedRelease' type='radio' [id]='status' [value]='item.id' [(ngModel)]='project.selectedRelease'
+                        />
+
+                      </td>
+                      <td md-cell="md-cell" style="text-align: center">{{item.name}}</td>
+                      <td md-cell="md-cell" style="text-align: center">{{item.description}}</td>
+                      <td md-cell="md-cell" style="text-align: center">{{item.date | date:'yyyy-MM-dd'}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h3 class="acordition" layout="layout" layout-align="start center">
+                  <strong flex="flex">Cloud Providers</strong>
+                  <div class="btns" layout="layout" layout-align="center center">
+                    <div layout="layout" layout-align="center center" *ngIf="!editingAws">
+                      <button class="btn btn-default" (click)="editingAws=true">
+                        <i class="fa fa-pencil"></i>
+                      </button>
+                    </div>
+                    <div layout="layout" layout-align="center center" *ngIf="editingAws">
+                      <button class="btn btn-default" (click)="saveAws(); editingAws=false">
+                        <i class="fa fa-check font-blue"></i>
+                      </button>
+                      <span></span>
+                      <button class="btn btn-default" (click)="cancelEditingAws(); editingAws=false">
+                        <i class="fa fa-close font-red"></i>
+                      </button>
+                    </div>
+                  </div>
+                </h3>
+              </mat-panel-title>
+
+            </mat-expansion-panel-header>
+            <div class="content" [ngClass]="{active: selectedType=='aws'}">
+              <div class="aws-form content-box-wrapper scrollable" flex="flex">
+                <label class="upload-file-v1" style="float:right">
+                  <file-upload [uploadLink]="uploadLink"></file-upload>
+                  <div class="btn btn-info" style="text-transform: none;float:right">Upload Secret File</div>
+                </label>
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </mat-card>
+  </div>
+  <div id="main-content" flex="66" layout="column">
+    <mat-card class="content-box" layout="column" flex="flex">
+      <div layout="column" flex="flex">
+        <h3 class="box-title" layout="row" layout-align="start center">
+          <button class="btn btn-default" style="margin-right:10px;" *ngIf="selectedGrid" (click)="backToTestList()">Back</button>
+          <span></span>
+          <button mat-button class="btn btn-info" (click)="showGitRepo();">Get From Git</button>
+          <span></span>
+          <label class="upload-file-v1" upload-done="uploadDone(test)" link="uploadLink" style="margin-bottom: 0">
+            <input class="hidden" type="file" name="file" />
+            <div class="btn btn-info" style="text-transform: none">Upload</div>
+            <div class="progress" *ngIf="percent">
+              <div class="percent" ng-style="percent"></div>
+            </div>
+          </label>
+        </h3>
+        <div class="content-box-wrapper" flex="flex" layout="column">
+          <div layout="column" flex="flex" *ngIf="!showingType">
+            <h3 layout="row">
+              <span flex="flex">Tests</span>
+              <button class="btn btn-info" (click)="changeShowingType('new-test')">Add new Test</button>
+            </h3>
+            <div class="scrollable grids-table" layout="layout" flex="flex">
+              <table class="table table-bordered table-striped table-2-columns" md-table="md-table" flex="flex">
+                <thead md-head="md-head" md-order="query.order">
+                  <tr md-row="md-row">
+                    <th md-column="md-column" style="text-align: center">Test Name</th>
+                    <th md-column="md-column" style="text-align: center">Test Description</th>
+                    <th md-column="md-column" style="text-align: center">File Name</th>
+                    <th md-column="md-column" style="text-align: center">Listeners</th>
+                    <th md-column="md-column" style="text-align: center"></th>
+                  </tr>
+                </thead>
+                <tbody md-body="md-body">
+                  <tr md-row="md-row" *ngFor="let item of tests ">
+                    <td md-cell="md-cell" (click)="viewTest(item)" style="text-align: center">{{item.name || item.fileName }}</td>
+                    <td md-cell="md-cell" style="text-align: center">{{item.description || item.fileName}}</td>
+                    <td md-cell="md-cell" style="text-align: center">{{item.fileName}}</td>
+                    <td md-cell="md-cell" style="text-align: center">{{item.listeners && item.listeners.length}}</td>
+                    <td md-cell="md-cell" style="text-align: center">
+                      <button class="btn btn-info" (click)="viewTest(item)">View</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- <md-table-pagination md-label="{{options.label}}" md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{amis.length}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="options.changePage()"></md-table-pagination> -->
+          </div>
+          <div layout="column" flex="flex" *ngIf="showingType=='new-ami'">
+            <form layout="column">
+              <label layout="column">
+                <span>Name</span>
+                <input class="form-control" name="name"  [(ngModel)]="newAMI.name" required="required" />
+              </label>
+              <br/>
+              <label layout="column">
+                <span>Description</span>
+                <textarea class="form-control" name="description" [(ngModel)]="newAMI.description"></textarea>
+              </label>
+              <br/>
+              <div class="text-left">
+                <button class="btn btn-info" (click)="addNewAMI()">Add new AMI</button>
+              </div>
+            </form>
+          </div>
+          <div layout="column" flex="flex" *ngIf="showingType=='new-release'">
+            <form layout="column">
+              <label layout="column">
+                <span>Name</span>
+                <input class="form-control" name="releaseName" [(ngModel)]="newRelease.name" required="required" />
+              </label>
+              <br/>
+              <label layout="column">
+                <span>Description</span>
+                <textarea class="form-control" name="releaseDescription" [(ngModel)]="newRelease.description"></textarea>
+              </label>
+              <br/>
+              <div class="form-group">
+                <label layout="column">
+                  <span> Date</span>
+                  <div layout="row">
+                    <input style="max-width:100px" name=releaseDate flex="flex" class="form-control" matInput [matDatepicker]="datepicker1" placeholder="" [(ngModel)]="newRelease.date"
+                      required>
+                    <mat-datepicker-toggle matSuffix [for]="datepicker1"></mat-datepicker-toggle>
+                    <mat-datepicker touchUi="true" #datepicker1></mat-datepicker>
+                  </div>
+                </label>
+              </div>
+
+
+              <div class="text-left">
+                <button class="btn btn-info" (click)="addNewRelease()">Add new AMI</button>
+              </div>
+            </form>
+          </div>
+          <div layout="column" flex="flex" *ngIf="showingType=='new-grid'">
+            <form name="newGridForm" layout="column">
+              <label [ngClass]="{'has-error': newGrid.hasError}">
+                <span>Name</span>
+                <input class="form-control" name="grid_name" [(ngModel)]="newGrid.name" required="required" />
+                <small class="font-red" *ngIf="newGrid.hasError">Grid name doesn't allow spaces, uppercase letters and special characters except underscore</small>
+              </label>
+              <br/>
+              <label>
+                <span>Description</span>
+                <textarea class="form-control" name="description" [(ngModel)]="newGrid.description" required="required"></textarea>
+              </label>
+              <br/>
+              <strong>Deployment Type:
+                <div style="padding: 10px 0 0 10px">
+                  <mat-radio-group>
+                    <mat-radio-button class="md-primary" value="ami">AMI</mat-radio-button>
+                    <mat-radio-button class="md-primary" value="docker">Docker</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </strong>
+              <div *ngIf="newGrid.deploymentType == 'ami'">
+                <strong>AMI details
+                  <div class="input-group form-group">
+                    <span class="input-group-addon">AMI Image</span>
+                    <input class="form-control" name="amiKey" type="text" [(ngModel)]="newGrid.amiKey" />
+                  </div>
+                  <div class="input-group">
+                    <span class="input-group-addon">AMI Key</span>
+                    <input class="form-control" name="amiKey" type="text" [(ngModel)]="newGrid.amiKey" />
+                  </div>
+                </strong>
+              </div>
+              <div *ngIf="newGrid.deploymentType == 'docker'">
+                <strong>Docker details
+                  <div class="input-group form-group">
+                    <span class="input-group-addon" style="width: 120px">Docker Image</span>
+                    <input class="form-control" name="amiKey" type="text" [(ngModel)]="newGrid.amiKey" />
+                  </div>
+                  <div class="input-group">
+                    <span class="input-group-addon" style="width: 120px">Docker Key</span>
+                    <input class="form-control" name="amiKey" type="text" [(ngModel)]="newGrid.amiKey" />
+                  </div>
+                </strong>
+              </div>
+              <br/>
+              <div class="text-left">
+                <button class="btn btn-info loading-button" is-saving="isSaving" (click)="addNewGrid()" [disabled]="isSaving">Add new GRID</button>
+              </div>
+            </form>
+          </div>
+          <div class="scrollable" layout="column" flex="flex" *ngIf="showingType=='new-grid-child'">
+            <div *ngIf="!global.addingNewGridChild">
+              <h3 layout="layout" layout-align="start center" [hidden]="global.addingNewGridChild">
+                <span>GRID children&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <i class="fa fa-plus" style="font-size: 20px" (click)="global.addingNewGridChild =! global.addingNewGridChild"></i>
+                <span flex="flex"></span>
+              </h3>
+              <h3 *ngIf="global.addingNewGridChild">{{global.selectedGridChild ? 'Edit Grid Child' : 'Add New Grid Child'}}</h3>
+              <div class="loading-overlay boxed" *ngIf="selectedGrid.show" layout="column" layout-align="center center">
+                <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+              </div>
+              <div class="scrollable grids-table" layout="layout"  flex="flex" *ngIf="selectedGrid.children">
+                <table class="scrollable table table-bordered table-striped table-2-columns" md-table="md-table" flex="flex">
+                  <thead md-head="md-head" md-order="query.order">
+                    <tr md-row="md-row">
+                      <th md-column="md-column" style="text-align: center">No. of instances</th>
+                      <th md-column="md-column" style="text-align: center">Status</th>
+                      <th md-column="md-column" style="text-align: center"></th>
+                    </tr>
+                  </thead>
+                  <tbody md-body="md-body">
+                    <tr md-row="md-row" *ngFor="let child of selectedGrid.children">
+                      <td md-cell="md-cell" style="text-align: center">{{child.instanceCount}}</td>
+                      <td md-cell="md-cell" style="text-align: center">Ready</td>
+                      <td md-cell="md-cell" style="text-align: center">
+                        <i class="fa fa-close" (click)="removeGridChild(child)"></i>&nbsp;&nbsp;&nbsp;
+                        <i class="fa fa-pencil" (click)="global.selectedGridChild=child; editGrildChild(child)"></i>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="grid-child-editor" *ngIf="global.addingNewGridChild" style="padding-top: 15px">
+              <form name="gridChildForm">
+                  <h3 *ngIf="global.addingNewGridChild">{{global.selectedGridChild ? 'Edit Grid Child' : 'Add New Grid Child'}}</h3>
+                <div class="clearfix">
+                  <div class="row">
+                      <div class="col-md-6"><strong>Deployment Type:</strong>
+                        <div style="padding: 10px 0 0 0px">
+                          <mat-radio-group [(ngModel)]="editingGridChild.deploymentType" name="deploymentType">
+                            <mat-radio-button class="md-primary" value="ami">AMI</mat-radio-button>
+                            <mat-radio-button class="md-primary" value="docker">Docker</mat-radio-button>
+                          </mat-radio-group>
+                        </div>
+                      </div>
+                      <div class="col-md-6" *ngIf="editingGridChild.deploymentType == 'ami'"><strong>AMI details
+                          <div class="input-group form-group"><span class="input-group-addon" >AMI Image</span>
+                            <input class="form-control" name="amiKey" type="text" [(ngModel)]="editingGridChild.amiImage"/>
+                          </div>
+                          <div class="input-group"><span class="input-group-addon" >AMI Key</span>
+                            <input class="form-control" type="text"  name="amiKey" [(ngModel)]="editingGridChild.amiKey"/>
+                          </div></strong></div>
+                      <div class="col-md-6" *ngIf="editingGridChild.deploymentType == 'docker'"><strong>Docker details
+                          <div class="input-group form-group"><span class="input-group-addon" style="width: 120px">Docker Image</span>
+                            <input class="form-control"  name="amiKey" type="text" [(ngModel)]="editingGridChild.dockerImage"/>
+                          </div>
+                          <label layout="column"><strong>No. Of Containers</strong>
+                            <input class="form-control" name="noOfContainers" [(ngModel)]="editingGridChild.noOfContainers"/>
+                          </label></strong>
+                      </div>
+                  </div>
+                </div>
+                <hr/>
+                <div class="clearfix">
+                  <div class="col-md-6">
+                    <label layout="column"><strong>Instances Count</strong>
+                      <input class="form-control" name="instanceCount" [(ngModel)]="editingGridChild.instanceCount"/>
+                    </label>
+                  </div>
+                </div><br/>
+                <div> 
+                  <button class="btn btn-default" (click)="global.addingNewGridChild = false">Cancel</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <button class="btn btn-info loading-button" [hidden]="global.selectedGridChild" [disabled]="isSavingGridChild"  (click)="addNewGridChild()" >Add new GRID Child</button>
+                  <button class="btn btn-info loading-button" *ngIf="global.selectedGridChild"  [disabled]="isSavingGridChild"  (click)="updateGridChild()" >Update GRID Child</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="scrollable" *ngIf="showingType=='new-test'">
+            <h3>New Test</h3>
+            <div class="form-group">
+              <label class="full-width" layout="column">
+                <span>Test Name</span>
+                <input class="form-control" type="text" [(ngModel)]="newTest.name" />
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="full-width" layout="column">
+                <span>Test Description</span>
+                <textarea class="form-control" [(ngModel)]="newTest.description" style="min-height: 120px; height: 120px"></textarea>
+              </label>
+            </div>
+            <div class="form-group" layout="column">
+              <div>
+                <label>JMX File:</label>
+                <mat-radio-group [(ngModel)]="newTest.fileType">
+                  <mat-radio-button value="upload">
+                    <span>Upload from your computer</span>
+                  </mat-radio-button>
+                  <input id="jmx-file-upload" type="file" [disabled]="newTest.fileType != 'upload'" [(ngModel)]="newTest.fileName" />
+                  <mat-radio-button style="margin: 10px 0px;" value="git">
+                    <span>Get from Git</span>
+                  </mat-radio-button>
+                  <input class="form-control" type="text" [(ngModel)]="newTest.gitUrl" placeholder="Github url" [disabled]="newTest.fileType != 'git'"
+                  />
+                </mat-radio-group>
+              </div>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-default" (click)="changeShowingType('')">Cancel</button>&nbsp;&nbsp;&nbsp;&nbsp;
+              <button class="btn btn-info" [disabled]="!newTest.name || isSaving" (click)="addNewTest()">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

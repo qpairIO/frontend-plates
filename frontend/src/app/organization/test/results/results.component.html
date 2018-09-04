@@ -1,0 +1,4 @@
+<div layout="layout" class="text-center" layout-wrap="layout-wrap" flex="flex" style="height: 100%">
+  <div class="test-result-images" *ngIf="resultImages.length"><img *ngFor="let image of resultImages" src="{{image}}" style="margin-bottom: 15px; max-width: 100%"/></div>
+  <h3 [hidden]="resultImages.length" style="width:100%">There is no result.</h3>
+</div>

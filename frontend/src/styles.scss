@@ -1,0 +1,101 @@
+
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import './variables';
+@import './assets/css/colors.css';
+@import './assets/css/content-box.css';
+
+.app-full-width {
+  width: 100%;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.app-page {
+  padding-top: 30px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.center {
+  text-align: center;
+}
+
+p.large {
+  font-size: 1.3rem;
+}
+
+ul.no-bullets {
+  list-style-type: none;
+}
+#page-wrapper {
+    background: #eee;
+}
+#crud-instance {
+  .irs {
+    height: 20px;
+    .irs-min, .irs-max, .irs-from, .irs-to, .irs-single {
+      display: none;
+    }
+    .irs-line {
+      .irs-line-left, .irs-line-mid, .irs-line-right {
+        background: none;
+      }
+    }
+    .irs-line, .irs-bar {
+      top: 5px;
+    }
+    .irs-slider {
+      top: 2px;
+      width: 16px;
+      height: 16px;
+    }
+    .irs-bar {
+      background: #0db9f0;
+    }
+  }
+}
+.screen-content {
+  & > .mat-card {
+    margin: 3px;
+    padding: 15px;
+  }
+  & > .mat-toolbar {
+    height: 50px;
+    padding-top: 5px;
+    span {
+      margin-left: 10px;
+      text-transform: uppercase;
+    }
+  }
+  .usage-model-form { 
+    .form-group {
+      float: left;
+      width: 100%;
+      label {
+        &>small {
+          padding-left: 2px;
+        }
+      }
+      .btn.remove {
+        position: absolute;
+        top: 25px;
+      }
+    }
+  }
+}
+app-risk-analysis-details {
+  height: 100%;
+  width: 100%;
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  } 
+}

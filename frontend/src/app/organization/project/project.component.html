@@ -1,0 +1,25 @@
+<h2 class="page-title" layout="layout" layout-align="start center"><span flex="flex">Projects</span>
+  <button class="btn btn-info" (click)="createProject()" ><i class="fa fa-plus"></i>Add New</button>
+</h2>
+<mat-card flex="flex" layout="column">
+  <div class="scrollable grids-table project" layout="layout" flex="flex">
+    <table class="table table-bordered table-striped table-2-columns" md-table="md-table" flex="flex">
+      <thead md-head="md-head" >
+        <tr md-row="md-row">
+          <th md-column="md-column" style="text-align: center">Project Name</th>
+          <th class="md-column ng-isolate-scope" md-column="md-column" style="text-align: center">Description</th>
+          <th class="md-column ng-isolate-scope" md-column="md-column" style="text-align: center"></th>
+        </tr>
+      </thead>
+      <tbody md-body="md-body">
+        <tr md-row="md-row" *ngFor="let project of projects">
+          <td md-cell="md-cell" style="text-align: center"><span >{{project.name}}</span></td>
+          <td md-cell="md-cell" style="text-align: center">{{project.description}}</td>
+          <td md-cell="md-cell" style="text-align: center">
+            <button class="btn btn-info" (click)="viewProject(project.id)" >View</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</mat-card>

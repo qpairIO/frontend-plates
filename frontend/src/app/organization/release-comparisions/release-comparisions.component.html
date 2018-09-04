@@ -1,0 +1,80 @@
+<div id="model-usage-analisys" layout="column" flex="flex" class="scrollable screen-content" style="overflow: visible;">
+  <mat-toolbar class="layout-align-start-center layout-row">
+    <i class="glyph-icon icon-line-chart" style="color:Green" title=".icon-line-chart"></i>
+    <span clas="title"> Release Comparisions </span>
+  </mat-toolbar>
+  <mat-card class="layout-column flex scrollable">
+  	<div class="example-box-wrapper">
+	  <form class="form">
+	  	<div class="row">
+	  		<div class="col-md-4">
+	  			<div class="form-group">
+			      	<label>Project Name</label>
+			        <select class="form-control" [(ngModel)]="project" name="project">
+			        	<option *ngFor="let item of projects" [value]="item">{{item}}</option>
+			        </select>
+			    </div>
+	  		</div>
+	  		<div class="col-md-4">
+	  			<div class="form-group">
+			      	<label>API</label>
+			        <select class="form-control" [(ngModel)]="api" name="api">
+			        	<option *ngFor="let item of apis" [value]="item">{{item}}</option>
+			        </select>
+			    </div>
+	  		</div>
+	  		<div class="col-md-4">
+	  			<div class="form-group">
+			      	<label>Test</label>
+			        <select class="form-control" [(ngModel)]="test" name="tets">
+			        	<option *ngFor="let item of tests" [value]="item">{{item}}</option>
+			        </select>
+			    </div>
+	  		</div>
+	    </div>
+	  </form>
+	</div>
+	<div class="example-box-wrapper">
+	 <label>Select the release versions to compare</label>
+	  <form class="form">
+	  	<div class="row">
+	  		<div class="col-md-4">
+	  			<div class="form-group">
+			      	<label>Release</label>
+			        <select class="form-control" [(ngModel)]="release1" name="release1">
+			        	<option *ngFor="let item of releases" [value]="item">{{item}}</option>
+			        </select>
+			    </div>
+	  		</div>
+	  		<div class="col-md-4">
+	  			<div class="form-group">
+			      	<label>Release</label>
+			        <select class="form-control" [(ngModel)]="release2" name="release2">
+			        	<option *ngFor="let item of releases" [value]="item">{{item}}</option>
+			        </select>
+			    </div>
+	  		</div>
+
+	  		<div class="col-md-4">
+	  			<div class="form-group">
+	  				<label style="width: 100%">&nbsp;</label>
+			      	<button class="btn btn-primary" (click)="compare()">Compare</button>
+			    </div>
+	  		</div>
+	    </div>
+	  </form>
+	</div>
+	<div class="example-box-wrapper row" *ngIf="showChart">
+		<div class="row">
+			<div class="col-md-6" *ngFor="let type of chartTypes; let i = index">
+			  <div class="content-box">
+			    <h3 class="content-box-header content-box-header-alt bg-white"><span class="header-wrapper">{{type}}</span></h3>
+			    <div class="example-box-wrapper">
+			    	<app-d3-chart [options]="chartDatas[i].options" [data]="chartDatas[i].data"></app-d3-chart> 
+			    </div>
+			  </div>
+			</div>
+		</div>
+	</div>
+  </mat-card>
+ </div>

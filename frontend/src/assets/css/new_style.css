@@ -1,0 +1,154 @@
+.content-box mat-radio-group{
+  margin-left:10px;
+}
+app-view-project .btn-new{
+  float:right;
+}
+.upload-file-v1{
+  margin-left:10px;
+}
+.btn-info:hover{
+  color:#fff !important;
+}
+mat-panel-title h3{
+  margin:0px;
+  width:100%;
+  font-size:16px;
+}
+.mat-expansion-panel:not([class*=mat-elevation-z]){
+  box-shadow:none !important;
+  border: 1px solid #DAE5EF;
+  margin-bottom:10px;
+}
+.header-box{
+  color: #fff;
+  background: #00bca4;
+  padding: 15px;
+}
+.mat-dialog-container{
+  padding:0px !important;
+}
+.content-box{
+  margin:15px;
+}
+.footer-box{
+  text-align: center;
+  margin-bottom:15px;
+}
+.footer-box button{
+  margin-left:10px;
+}
+.mat-radio-button{
+  margin-right:10px;
+}
+.action {
+  border: none;
+  padding: 0px 10px;
+  min-width: 80px;
+  text-align: center;
+  color: #fff;
+  height: 34px;
+  line-height: 34px;
+  cursor: pointer;
+}
+.action.stopped {
+  background: red;
+}
+.action.running {
+  background: limegreen;
+}
+.heatmap {
+  border: 1px solid #dfe8f1;
+  margin-top: 20px;
+  padding: 10px;
+  margin: 10px;
+}
+.heatmap .application-name {
+  float: left;
+  font-size: 20px;
+}
+.heatmap .region-dropdown {
+  float: right;
+}
+.heatmap .region-dropdown select {
+  width: 150px;
+}
+.heatmap .elb-item {
+  float: left;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-right: 20px;
+}
+.heatmap .elb-item i {
+  padding-left: 5px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.heatmap .status {
+  color: #555;
+}
+.heatmap .start {
+  background: limegreen;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  margin-right: 10px;
+}
+.heatmap .stop {
+  background: red;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  margin-right: 10px;
+}
+.heatmap .instance {
+  float: left;
+}
+.heatmapmain .all-action {
+  width: 100px;
+}
+.heatmapmain select {
+  width: 170px;
+}
+.heatmapmain table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #555;
+}
+.heatmapmain th,
+.heatmapmain td {
+  text-align: left;
+  padding: 8px;
+}
+.heatmapmain tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.heatmapmain th {
+  background-color: #4CAF50;
+  color: white;
+}
+.ha-testing .mat-radio-label-content {
+  display: inline-block;
+  order: 0;
+  line-height: inherit;
+  padding-left: 5px;
+  padding-right: 10px;
+}
+.page-title{
+  margin: 0px 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.box-app p.instance-name{
+  height:34px;
+  line-height: 34px;
+}
+.project td{
+  color:#424242;
+  vertical-align: middle;
+}
+.project th{
+  padding: 0 24px;
+  color:#424242;
+  vertical-align: middle;
+}

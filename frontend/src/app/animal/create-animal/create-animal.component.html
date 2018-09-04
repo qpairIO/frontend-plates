@@ -1,0 +1,20 @@
+<a name="animal-input"></a>
+<mat-card>
+  <div class="center">
+    <div>
+      <mat-form-field class="full-width">
+        <input matInput
+               id="animal-input"
+               type="text"
+               placeholder="Animal's Name"
+               (keypress)="createAnimalOnEnter($event)"
+               [(ngModel)]="newAnimal.name">
+      </mat-form-field>
+    </div>
+    <div>
+      <button mat-raised-button [disabled]="isCreatingAnimal" color="accent" (click)="createAnimal()">
+        Create <spinner display="inline" *ngIf="isCreatingAnimal"></spinner>
+      </button>
+    </div>
+  </div>
+</mat-card>

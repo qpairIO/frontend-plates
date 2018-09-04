@@ -1,0 +1,34 @@
+
+<table class="table table-bordered table-striped table-2-columns" md-table="md-table" flex="flex">
+  <thead md-head="md-head">
+    <tr md-row="md-row">
+      <th md-column="md-column"></th>
+      <th md-column="md-column" class="text-center">Lab Name</th>
+      <th md-column="md-column" class="text-center">Status</th>
+      <th md-column="md-column"></th>
+    </tr>
+  </thead>
+  <tbody md-body="md-body">
+    <tr md-row="md-row" *ngFor="let grid of grids; trackBy: $index">
+      <td md-cell="md-cell" class="text-center">
+        <mat-radio-group [(ngModel)]="global.selectedGridId" (change)="changeGrid(grid)" >
+          <mat-radio-button [value]="grid.id" [disabled]="global.isTestResults || global.runTestStatus"></mat-radio-button>
+        </mat-radio-group>
+      </td>
+      <td md-cell="md-cell" class="text-center">{{grid.name}}</td>
+      <td md-cell="md-cell" class="text-center"><i class="fa fa-circle" [ngStyle]="{color: grid.status ? 'red' : 'limegreen'}"></i><span> {{grid.status ? 'Busy' : 'Available'}}</span></td>
+      <td md-cell="md-cell" class="text-center">
+        <button class="btn btn-default" (click)="viewInstances(grid)" [disabled]="!grid.instances || !grid.instances.length">{{grid.viewInstances ? 'Hide' : 'View'}} Instances</button>
+      </td>
+    </tr>
+    <!-- <tr class="collapse-row" *ngFor="let instance of grid.instances" *ngIf="grid.viewInstances">
+      <td md-cell="md-cell" class="text-center"> </td>
+      <td md-cell="md-cell" class="text-center"> </td>
+      <td md-cell="md-cell" class="text-center"> </td>
+      <td md-cell="md-cell" class="text-center"> </td>
+      <td md-cell="md-cell" colspan="2" class="text-center"><strong>{{instance.id}}</strong></td>
+      <td md-cell="md-cell" class="text-center"><i class="fa fa-circle" [style]="{color: instance.status=='active' ? 'limegreen' : 'red'}"></i><span> {{instance.status=='active' ? 'Running' : 'Stopping'}}</span></td>
+      <td md-cell="md-cell" class="text-center"> </td>
+    </tr> -->
+  </tbody>
+</table>

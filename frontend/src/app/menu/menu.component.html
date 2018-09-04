@@ -1,0 +1,24 @@
+<div class="bg-black font-inverse" id="page-sidebar">
+  <div class="scroll-sidebar">
+    <ul id="sidebar-menu" *ngIf="!hideList">
+      <li class="header"><span>Features</span></li>
+      <li><a ui-sref-active="active" routerLink="/dashboard" routerLinkActive="active" title="Elements"><i class="glyph-icon icon-home" routerLinkActive="active" title=".icon-home" style="color:DeepSkyBlue"></i><span>Dashboard</span></a></li>
+      <li><a ui-sref-active="active" routerLink="/project" routerLinkActive="active" title="Elements"><i class="glyph-icon icon-bars" routerLinkActive="active" title=".icon-bars" style="color:DeepSkyBlue"></i><span>Projects</span></a></li>
+      <li><a ui-sref-active="active" routerLink="/test-results" routerLinkActive="active" title="Widgets"><i class="glyph-icon icon-paper-plane-o" routerLinkActive="active" title=".icon-paper-plane-o" style="color:DarkOrange"></i><span>TestResults</span></a></li>
+      <li><a ui-sref-active="active" routerLink="/release-comparisions" routerLinkActive="active" title="Forms UI"><i class="glyph-icon icon-line-chart" routerLinkActive="active" title=".icon-line-chart" style="color:Aquamarine"></i><span>Release Comparisions</span></a></li>
+      <li><a ui-sref-active="active" routerLink="/ha-testing" routerLinkActive="active" title="Advanced tables"><i class="glyph-icon icon-linecons-diamond" style="color:Brown"></i><span>HA Testing</span></a></li>
+      <li><a ui-sref-active="active" routerLink="/risk-analysis" routerLinkActive="active" title="Charts"><i class="glyph-icon icon-align-left" routerLinkActive="active" title=".icon-align-left" style="color:red"></i><span>Risk Analysis</span></a></li>
+      <li><a ui-sref-active="active" routerLink="/cost-analysis" routerLinkActive="active" title="Maps"><i class="glyph-icon icon-dollar" routerLinkActive="active" title=".icon-dollar" style="color:Green"></i><span>Cost Analysis</span></a></li>
+      <li><a ui-sref-active="active" routerLink="/usage-model-analysis" routerLinkActive="active" title="Pages"><i class="glyph-icon icon-bar-chart" routerLinkActive="active" title=".icon-bar-chart" style="color:Pink"></i><span>Usage Model Analysis</span></a></li>
+      <li><a ui-sref-active="active" routerLink="/calibration" routerLinkActive="active" title="Other Pages"><i class="glyph-icon icon-calculator" routerLinkActive="active" title=".icon-calculator" style="color:BlueViolet"></i><span>Calibration</span></a></li>
+      <li><a href="#" routerLinkActive="active" title="Dashboard boxes"><i class="glyph-icon icon-user" routerLinkActive="active" title=".icon-user" style="color:FloralWhite"></i><span>Users</span></a></li>
+      <li><a href="#" routerLinkActive="active" title="Mailbox"><i class="glyph-icon icon-cog" routerLinkActive="active" title=".icon-cog" style="color:Gold"></i><span>Settings</span></a>
+        <div class="sidebar-submenu">
+          <ul>
+            <li><a routerLink="/profile" routerLinkActive="active" title="Inbox"><span>Profile</span></a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

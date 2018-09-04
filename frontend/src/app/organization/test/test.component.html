@@ -1,0 +1,58 @@
+<div id="test-page" layout="column" flex="flex">
+  <br/>
+  <div class="clearfix">
+    <div class="col-md-12 btns" layout="layout">
+      <button style="margin-right:15px;" class="btn btn-info" (click)="global.runTest()" *ngIf="!global.isTestResults" [disabled]="global.runTestStatus">Run Test</button>
+      <app-test-result-status [global]="global"></app-test-result-status>
+      <div class="all-button">
+          <button class="btn btn-warning" routerLink="./editor" routerLinkActive="active" style="margin-right: 16px">Archive</button>
+          <span></span>
+          <a class="btn btn-success" *ngIf="global.isTestResults" href="/testResult/{{global.testResultId}}/pdf?download=true" target="_blank"
+            style="margin-right: 16px">Generate Report</a>
+          <a class="btn btn-info" *ngIf="global.isTestResults" (click)="onModalSharingOpen()" style="margin-right: 16px">Share Report</a>
+          <span *ngIf="global.isTestResults"></span>
+          <button class="btn btn-primary" routerLink="./editor" routerLinkActive="active">Editor</button>
+      </div>
+    </div>
+  </div>
+  <div class="navigation">
+    <ul layout="row" layout-align="start center">
+      <li class="text-center" layout="column" layout-align="start center" flex="flex">
+        <a routerLink="./select-lab" routerLinkActive="active" class="description">Select Lab</a>
+      </li>
+      <li class="text-center" layout="column" layout-align="start center" flex="flex">
+        <a routerLink="./client-metric" routerLinkActive="active" class="description">Client Metric</a>
+      </li>
+      <li class="text-center" layout="column" layout-align="start center" flex="flex">
+        <a routerLink="./test-configuration" routerLinkActive="active" class="description">Test Configuration</a>
+      </li>
+      <li class="text-center" layout="column" layout-align="start center" flex="flex">
+        <a routerLink="./logs" routerLinkActive="active" class="description">Logs</a>
+      </li>
+      <li class="text-center" layout="column" layout-align="start center" flex="flex">
+        <a routerLink="./results" routerLinkActive="active" class="description">Results</a>
+      </li>
+      <li class="text-center" layout="column" layout-align="start center" flex="flex">
+        <a routerLink="./client-status" routerLinkActive="active" class="description">Client Status</a>
+      </li>
+      <li class="text-center" layout="column" layout-align="start center" flex="flex">
+        <a routerLink="./server-metrics" routerLinkActive="active" class="description">Server Metrics</a>
+      </li>
+    </ul>
+  </div>
+  <div class="step-container content-box-wrapper" flex="flex">
+    <div class="loading-overlay boxed" layout="column" layout-align="center center" *ngIf="global.isLoading">
+      <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+    </div>
+    <div class="step-content">
+      <router-outlet></router-outlet>
+      <!-- <app-select-lab></app-select-lab>
+      <app-client-metric></app-client-metric>
+      <app-test-configuration></app-test-configuration>
+      <app-logs></app-logs>
+      <app-results></app-results>
+      <app-client-status></app-client-status>
+      <app-server-metrics></app-server-metrics> -->
+    </div>
+  </div>
+</div>

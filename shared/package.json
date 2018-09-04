@@ -1,0 +1,27 @@
+{
+  "name": "@tsmean/shared",
+  "version": "0.0.0",
+  "description": "Code shared between backend and frontend of app",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "",
+    "build:lib": "tsc && cp .npmignore dist && cp package.json dist",
+    "pub": "npm version patch && npm run build:lib && cd dist && npm publish"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@nestjs/common": "^4.6.5",
+    "@nestjs/core": "^4.6.5",
+    "@nestjs/swagger": "^1.1.4",
+    "class-validator": "^0.8.1",
+    "express": "^4.16.2",
+    "reflect-metadata": "^0.1.12"
+  },
+  "devDependencies": {
+    "@types/jest": "^21.1.4",
+    "jest": "^21.2.1",
+    "ts-jest": "^21.1.3",
+    "typescript": "^2.5.3"
+  }
+}

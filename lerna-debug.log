@@ -1,0 +1,1225 @@
+0 silly input []
+1 silly flags { _: [ 'bootstrap' ],
+1 silly flags   'reject-cycles': false,
+1 silly flags   rejectCycles: false,
+1 silly flags   args: [] }
+2 verbose rootPath /Users/thangcao/Public/loadswarm-angular
+3 info version 2.11.0
+4 silly existsSync /Users/thangcao/Public/loadswarm-angular/VERSION
+5 silly initialize attempt
+6 silly npmConfig { registry: undefined,
+6 silly npmConfig   npmClient: undefined,
+6 silly npmConfig   npmClientArgs: undefined,
+6 silly npmConfig   mutex: undefined }
+7 silly initialize success
+8 silly execute attempt
+9 info Bootstrapping 3 packages
+10 info lifecycle preinstall
+11 silly runScript preinstall @tsmean/shared
+12 silly @tsmean/shared
+13 silly runScript preinstall tsmean-frontend
+14 silly tsmean-frontend
+15 silly runScript preinstall @tsmean/backend
+16 silly @tsmean/backend
+17 silly hasMatchingDependency tsmean-frontend @tsmean/shared
+18 silly hasMatchingDependency @tsmean/backend @tsmean/shared
+19 silly hasDependencyInstalled @tsmean/backend tslint
+20 silly dependencyIsSatisfied [ 'tslint',
+20 silly dependencyIsSatisfied   '^5.10.0',
+20 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+21 verbose dependencyIsSatisfied tslint true
+22 silly hasDependencyInstalled tsmean-frontend tslint
+23 silly dependencyIsSatisfied [ 'tslint',
+23 silly dependencyIsSatisfied   '5.7.0',
+23 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+24 verbose dependencyIsSatisfied tslint true
+25 silly hasDependencyInstalled @tsmean/shared typescript
+26 silly dependencyIsSatisfied [ 'typescript',
+26 silly dependencyIsSatisfied   '^2.5.3',
+26 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/shared/node_modules' ]
+27 verbose dependencyIsSatisfied typescript true
+28 silly hasDependencyInstalled tsmean-frontend typescript
+29 silly dependencyIsSatisfied [ 'typescript',
+29 silly dependencyIsSatisfied   '2.7.2',
+29 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+30 verbose dependencyIsSatisfied typescript true
+31 silly hasDependencyInstalled @tsmean/backend typescript
+32 silly dependencyIsSatisfied [ 'typescript',
+32 silly dependencyIsSatisfied   '2.7.2',
+32 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+33 verbose dependencyIsSatisfied typescript true
+34 silly hasDependencyInstalled @tsmean/shared @types/jest
+35 silly dependencyIsSatisfied [ '@types/jest',
+35 silly dependencyIsSatisfied   '^21.1.4',
+35 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/shared/node_modules' ]
+36 verbose dependencyIsSatisfied @types/jest true
+37 silly hasDependencyInstalled @tsmean/backend @types/jest
+38 silly dependencyIsSatisfied [ '@types/jest',
+38 silly dependencyIsSatisfied   '21.1.10',
+38 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+39 verbose dependencyIsSatisfied @types/jest true
+40 silly hasDependencyInstalled @tsmean/shared jest
+41 silly dependencyIsSatisfied [ 'jest',
+41 silly dependencyIsSatisfied   '^21.2.1',
+41 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/shared/node_modules' ]
+42 verbose dependencyIsSatisfied jest true
+43 silly hasDependencyInstalled @tsmean/backend jest
+44 silly dependencyIsSatisfied [ 'jest',
+44 silly dependencyIsSatisfied   '21.2.1',
+44 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+45 verbose dependencyIsSatisfied jest true
+46 silly hasDependencyInstalled @tsmean/shared ts-jest
+47 silly dependencyIsSatisfied [ 'ts-jest',
+47 silly dependencyIsSatisfied   '^21.1.3',
+47 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/shared/node_modules' ]
+48 verbose dependencyIsSatisfied ts-jest true
+49 silly hasDependencyInstalled @tsmean/backend ts-jest
+50 silly dependencyIsSatisfied [ 'ts-jest',
+50 silly dependencyIsSatisfied   '21.2.4',
+50 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+51 verbose dependencyIsSatisfied ts-jest true
+52 silly hasDependencyInstalled @tsmean/shared @nestjs/common
+53 silly dependencyIsSatisfied [ '@nestjs/common',
+53 silly dependencyIsSatisfied   '^4.6.5',
+53 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/shared/node_modules' ]
+54 verbose dependencyIsSatisfied @nestjs/common true
+55 silly hasDependencyInstalled @tsmean/backend @nestjs/common
+56 silly dependencyIsSatisfied [ '@nestjs/common',
+56 silly dependencyIsSatisfied   '4.6.4',
+56 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+57 verbose dependencyIsSatisfied @nestjs/common true
+58 silly hasDependencyInstalled @tsmean/shared @nestjs/core
+59 silly dependencyIsSatisfied [ '@nestjs/core',
+59 silly dependencyIsSatisfied   '^4.6.5',
+59 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/shared/node_modules' ]
+60 verbose dependencyIsSatisfied @nestjs/core true
+61 silly hasDependencyInstalled @tsmean/backend @nestjs/core
+62 silly dependencyIsSatisfied [ '@nestjs/core',
+62 silly dependencyIsSatisfied   '4.6.4',
+62 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+63 verbose dependencyIsSatisfied @nestjs/core true
+64 silly hasDependencyInstalled @tsmean/shared @nestjs/swagger
+65 silly dependencyIsSatisfied [ '@nestjs/swagger',
+65 silly dependencyIsSatisfied   '^1.1.4',
+65 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/shared/node_modules' ]
+66 verbose dependencyIsSatisfied @nestjs/swagger true
+67 silly hasDependencyInstalled @tsmean/backend @nestjs/swagger
+68 silly dependencyIsSatisfied [ '@nestjs/swagger',
+68 silly dependencyIsSatisfied   '1.1.4',
+68 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+69 verbose dependencyIsSatisfied @nestjs/swagger true
+70 silly hasDependencyInstalled @tsmean/shared class-validator
+71 silly dependencyIsSatisfied [ 'class-validator',
+71 silly dependencyIsSatisfied   '^0.8.1',
+71 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/shared/node_modules' ]
+72 verbose dependencyIsSatisfied class-validator true
+73 silly hasDependencyInstalled tsmean-frontend class-validator
+74 silly dependencyIsSatisfied [ 'class-validator',
+74 silly dependencyIsSatisfied   '0.8.1',
+74 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+75 verbose dependencyIsSatisfied class-validator true
+76 silly hasDependencyInstalled @tsmean/backend class-validator
+77 silly dependencyIsSatisfied [ 'class-validator',
+77 silly dependencyIsSatisfied   '0.8.1',
+77 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+78 verbose dependencyIsSatisfied class-validator true
+79 silly hasDependencyInstalled @tsmean/shared express
+80 silly dependencyIsSatisfied [ 'express',
+80 silly dependencyIsSatisfied   '^4.16.2',
+80 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/shared/node_modules' ]
+81 verbose dependencyIsSatisfied express true
+82 silly hasDependencyInstalled @tsmean/backend express
+83 silly dependencyIsSatisfied [ 'express',
+83 silly dependencyIsSatisfied   '4.16.2',
+83 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+84 verbose dependencyIsSatisfied express true
+85 silly hasDependencyInstalled @tsmean/shared reflect-metadata
+86 silly dependencyIsSatisfied [ 'reflect-metadata',
+86 silly dependencyIsSatisfied   '^0.1.12',
+86 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/shared/node_modules' ]
+87 verbose dependencyIsSatisfied reflect-metadata true
+88 silly hasDependencyInstalled @tsmean/backend reflect-metadata
+89 silly dependencyIsSatisfied [ 'reflect-metadata',
+89 silly dependencyIsSatisfied   '0.1.12',
+89 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+90 verbose dependencyIsSatisfied reflect-metadata true
+91 silly hasDependencyInstalled tsmean-frontend @angular-devkit/build-angular
+92 silly dependencyIsSatisfied [ '@angular-devkit/build-angular',
+92 silly dependencyIsSatisfied   '0.6.0',
+92 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+93 verbose dependencyIsSatisfied @angular-devkit/build-angular true
+94 silly hasDependencyInstalled tsmean-frontend @angular-devkit/build-optimizer
+95 silly dependencyIsSatisfied [ '@angular-devkit/build-optimizer',
+95 silly dependencyIsSatisfied   '^0.6.3',
+95 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+96 verbose dependencyIsSatisfied @angular-devkit/build-optimizer true
+97 silly hasDependencyInstalled tsmean-frontend @angular/cli
+98 silly dependencyIsSatisfied [ '@angular/cli',
+98 silly dependencyIsSatisfied   '^6.0.5',
+98 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+99 verbose dependencyIsSatisfied @angular/cli true
+100 silly hasDependencyInstalled tsmean-frontend @angular/compiler-cli
+101 silly dependencyIsSatisfied [ '@angular/compiler-cli',
+101 silly dependencyIsSatisfied   '6.0.3',
+101 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+102 verbose dependencyIsSatisfied @angular/compiler-cli true
+103 silly hasDependencyInstalled tsmean-frontend @angular/language-service
+104 silly dependencyIsSatisfied [ '@angular/language-service',
+104 silly dependencyIsSatisfied   '6.0.3',
+104 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+105 verbose dependencyIsSatisfied @angular/language-service true
+106 silly hasDependencyInstalled tsmean-frontend @types/datatables.net
+107 silly dependencyIsSatisfied [ '@types/datatables.net',
+107 silly dependencyIsSatisfied   '^1.10.10',
+107 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+108 verbose dependencyIsSatisfied @types/datatables.net true
+109 silly hasDependencyInstalled tsmean-frontend @types/jasmine
+110 silly dependencyIsSatisfied [ '@types/jasmine',
+110 silly dependencyIsSatisfied   '2.5.53',
+110 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+111 verbose dependencyIsSatisfied @types/jasmine true
+112 silly hasDependencyInstalled tsmean-frontend @types/jasminewd2
+113 silly dependencyIsSatisfied [ '@types/jasminewd2',
+113 silly dependencyIsSatisfied   '2.0.2',
+113 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+114 verbose dependencyIsSatisfied @types/jasminewd2 true
+115 silly hasDependencyInstalled tsmean-frontend @types/jquery
+116 silly dependencyIsSatisfied [ '@types/jquery',
+116 silly dependencyIsSatisfied   '^3.3.2',
+116 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+117 verbose dependencyIsSatisfied @types/jquery true
+118 silly hasDependencyInstalled tsmean-frontend @types/node
+119 silly dependencyIsSatisfied [ '@types/node',
+119 silly dependencyIsSatisfied   '6.0.95',
+119 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+120 verbose dependencyIsSatisfied @types/node true
+121 silly hasDependencyInstalled @tsmean/backend @types/node
+122 silly dependencyIsSatisfied [ '@types/node',
+122 silly dependencyIsSatisfied   '8.9.4',
+122 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+123 verbose dependencyIsSatisfied @types/node true
+124 silly hasDependencyInstalled tsmean-frontend codelyzer
+125 silly dependencyIsSatisfied [ 'codelyzer',
+125 silly dependencyIsSatisfied   '4.3.0',
+125 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+126 verbose dependencyIsSatisfied codelyzer true
+127 silly hasDependencyInstalled tsmean-frontend is-docker
+128 silly dependencyIsSatisfied [ 'is-docker',
+128 silly dependencyIsSatisfied   '1.1.0',
+128 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+129 verbose dependencyIsSatisfied is-docker true
+130 silly hasDependencyInstalled tsmean-frontend jasmine-core
+131 silly dependencyIsSatisfied [ 'jasmine-core',
+131 silly dependencyIsSatisfied   '3.1.0',
+131 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+132 verbose dependencyIsSatisfied jasmine-core true
+133 silly hasDependencyInstalled tsmean-frontend jasmine-spec-reporter
+134 silly dependencyIsSatisfied [ 'jasmine-spec-reporter',
+134 silly dependencyIsSatisfied   '4.2.1',
+134 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+135 verbose dependencyIsSatisfied jasmine-spec-reporter true
+136 silly hasDependencyInstalled tsmean-frontend karma
+137 silly dependencyIsSatisfied [ 'karma',
+137 silly dependencyIsSatisfied   '2.0.2',
+137 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+138 verbose dependencyIsSatisfied karma true
+139 silly hasDependencyInstalled tsmean-frontend karma-chrome-launcher
+140 silly dependencyIsSatisfied [ 'karma-chrome-launcher',
+140 silly dependencyIsSatisfied   '2.1.1',
+140 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+141 verbose dependencyIsSatisfied karma-chrome-launcher true
+142 silly hasDependencyInstalled tsmean-frontend karma-cli
+143 silly dependencyIsSatisfied [ 'karma-cli',
+143 silly dependencyIsSatisfied   '1.0.1',
+143 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+144 verbose dependencyIsSatisfied karma-cli true
+145 silly hasDependencyInstalled tsmean-frontend karma-coverage-istanbul-reporter
+146 silly dependencyIsSatisfied [ 'karma-coverage-istanbul-reporter',
+146 silly dependencyIsSatisfied   '2.0.1',
+146 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+147 verbose dependencyIsSatisfied karma-coverage-istanbul-reporter true
+148 silly hasDependencyInstalled tsmean-frontend karma-jasmine
+149 silly dependencyIsSatisfied [ 'karma-jasmine',
+149 silly dependencyIsSatisfied   '1.1.2',
+149 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+150 verbose dependencyIsSatisfied karma-jasmine true
+151 silly hasDependencyInstalled tsmean-frontend karma-jasmine-html-reporter
+152 silly dependencyIsSatisfied [ 'karma-jasmine-html-reporter',
+152 silly dependencyIsSatisfied   '1.1.0',
+152 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+153 verbose dependencyIsSatisfied karma-jasmine-html-reporter true
+154 silly hasDependencyInstalled tsmean-frontend protractor
+155 silly dependencyIsSatisfied [ 'protractor',
+155 silly dependencyIsSatisfied   '5.3.2',
+155 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+156 verbose dependencyIsSatisfied protractor true
+157 silly hasDependencyInstalled tsmean-frontend ts-node
+158 silly dependencyIsSatisfied [ 'ts-node',
+158 silly dependencyIsSatisfied   '3.2.0',
+158 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+159 verbose dependencyIsSatisfied ts-node true
+160 silly hasDependencyInstalled @tsmean/backend ts-node
+161 silly dependencyIsSatisfied [ 'ts-node',
+161 silly dependencyIsSatisfied   '3.2.1',
+161 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+162 verbose dependencyIsSatisfied ts-node true
+163 silly hasDependencyInstalled tsmean-frontend webpack
+164 silly dependencyIsSatisfied [ 'webpack',
+164 silly dependencyIsSatisfied   '4.8.3',
+164 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+165 verbose dependencyIsSatisfied webpack true
+166 silly hasDependencyInstalled tsmean-frontend @angular/animations
+167 silly dependencyIsSatisfied [ '@angular/animations',
+167 silly dependencyIsSatisfied   '6.0.3',
+167 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+168 verbose dependencyIsSatisfied @angular/animations true
+169 silly hasDependencyInstalled tsmean-frontend @angular/cdk
+170 silly dependencyIsSatisfied [ '@angular/cdk',
+170 silly dependencyIsSatisfied   '6.1.0',
+170 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+171 verbose dependencyIsSatisfied @angular/cdk true
+172 silly hasDependencyInstalled tsmean-frontend @angular/common
+173 silly dependencyIsSatisfied [ '@angular/common',
+173 silly dependencyIsSatisfied   '6.0.3',
+173 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+174 verbose dependencyIsSatisfied @angular/common true
+175 silly hasDependencyInstalled tsmean-frontend @angular/compiler
+176 silly dependencyIsSatisfied [ '@angular/compiler',
+176 silly dependencyIsSatisfied   '6.0.3',
+176 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+177 verbose dependencyIsSatisfied @angular/compiler true
+178 silly hasDependencyInstalled tsmean-frontend @angular/core
+179 silly dependencyIsSatisfied [ '@angular/core',
+179 silly dependencyIsSatisfied   '6.0.3',
+179 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+180 verbose dependencyIsSatisfied @angular/core true
+181 silly hasDependencyInstalled tsmean-frontend @angular/forms
+182 silly dependencyIsSatisfied [ '@angular/forms',
+182 silly dependencyIsSatisfied   '6.0.3',
+182 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+183 verbose dependencyIsSatisfied @angular/forms true
+184 silly hasDependencyInstalled tsmean-frontend @angular/http
+185 silly dependencyIsSatisfied [ '@angular/http',
+185 silly dependencyIsSatisfied   '6.0.3',
+185 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+186 verbose dependencyIsSatisfied @angular/http true
+187 silly hasDependencyInstalled tsmean-frontend @angular/material
+188 silly dependencyIsSatisfied [ '@angular/material',
+188 silly dependencyIsSatisfied   '6.1.0',
+188 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+189 verbose dependencyIsSatisfied @angular/material true
+190 silly hasDependencyInstalled tsmean-frontend @angular/platform-browser
+191 silly dependencyIsSatisfied [ '@angular/platform-browser',
+191 silly dependencyIsSatisfied   '6.0.3',
+191 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+192 verbose dependencyIsSatisfied @angular/platform-browser true
+193 silly hasDependencyInstalled tsmean-frontend @angular/platform-browser-dynamic
+194 silly dependencyIsSatisfied [ '@angular/platform-browser-dynamic',
+194 silly dependencyIsSatisfied   '6.0.3',
+194 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+195 verbose dependencyIsSatisfied @angular/platform-browser-dynamic true
+196 silly hasDependencyInstalled tsmean-frontend @angular/router
+197 silly dependencyIsSatisfied [ '@angular/router',
+197 silly dependencyIsSatisfied   '6.0.3',
+197 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+198 verbose dependencyIsSatisfied @angular/router true
+199 silly hasDependencyInstalled tsmean-frontend @ng-bootstrap/ng-bootstrap
+200 silly dependencyIsSatisfied [ '@ng-bootstrap/ng-bootstrap',
+200 silly dependencyIsSatisfied   '^2.0.0',
+200 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+201 verbose dependencyIsSatisfied @ng-bootstrap/ng-bootstrap true
+202 silly hasDependencyInstalled tsmean-frontend @tsmean/cookies
+203 silly dependencyIsSatisfied [ '@tsmean/cookies',
+203 silly dependencyIsSatisfied   '1.0.0',
+203 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+204 verbose dependencyIsSatisfied @tsmean/cookies true
+205 silly hasDependencyInstalled tsmean-frontend @tsmean/spinner
+206 silly dependencyIsSatisfied [ '@tsmean/spinner',
+206 silly dependencyIsSatisfied   '1.0.1',
+206 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+207 verbose dependencyIsSatisfied @tsmean/spinner true
+208 silly hasDependencyInstalled tsmean-frontend @tsmean/toast
+209 silly dependencyIsSatisfied [ '@tsmean/toast',
+209 silly dependencyIsSatisfied   '0.0.1',
+209 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+210 verbose dependencyIsSatisfied @tsmean/toast true
+211 silly hasDependencyInstalled tsmean-frontend amazing-time-picker
+212 silly dependencyIsSatisfied [ 'amazing-time-picker',
+212 silly dependencyIsSatisfied   '^1.5.3',
+212 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+213 verbose dependencyIsSatisfied amazing-time-picker true
+214 silly hasDependencyInstalled tsmean-frontend angular-datatables
+215 silly dependencyIsSatisfied [ 'angular-datatables',
+215 silly dependencyIsSatisfied   '^6.0.0',
+215 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+216 verbose dependencyIsSatisfied angular-datatables true
+217 silly hasDependencyInstalled tsmean-frontend core-js
+218 silly dependencyIsSatisfied [ 'core-js',
+218 silly dependencyIsSatisfied   '2.5.3',
+218 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+219 verbose dependencyIsSatisfied core-js true
+220 silly hasDependencyInstalled tsmean-frontend d3
+221 silly dependencyIsSatisfied [ 'd3',
+221 silly dependencyIsSatisfied   '^3.4.4',
+221 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+222 verbose dependencyIsSatisfied d3 true
+223 silly hasDependencyInstalled tsmean-frontend datatables.net
+224 silly dependencyIsSatisfied [ 'datatables.net',
+224 silly dependencyIsSatisfied   '^1.10.16',
+224 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+225 verbose dependencyIsSatisfied datatables.net true
+226 silly hasDependencyInstalled tsmean-frontend datatables.net-dt
+227 silly dependencyIsSatisfied [ 'datatables.net-dt',
+227 silly dependencyIsSatisfied   '^1.10.16',
+227 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+228 verbose dependencyIsSatisfied datatables.net-dt true
+229 silly hasDependencyInstalled tsmean-frontend hammerjs
+230 silly dependencyIsSatisfied [ 'hammerjs',
+230 silly dependencyIsSatisfied   '2.0.8',
+230 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+231 verbose dependencyIsSatisfied hammerjs true
+232 silly hasDependencyInstalled tsmean-frontend hwrld
+233 silly dependencyIsSatisfied [ 'hwrld',
+233 silly dependencyIsSatisfied   '^1.0.1',
+233 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+234 verbose dependencyIsSatisfied hwrld true
+235 silly hasDependencyInstalled tsmean-frontend jquery
+236 silly dependencyIsSatisfied [ 'jquery',
+236 silly dependencyIsSatisfied   '^3.3.1',
+236 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+237 verbose dependencyIsSatisfied jquery true
+238 silly hasDependencyInstalled tsmean-frontend jspdf
+239 silly dependencyIsSatisfied [ 'jspdf',
+239 silly dependencyIsSatisfied   '*',
+239 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+240 verbose dependencyIsSatisfied jspdf true
+241 silly hasDependencyInstalled tsmean-frontend lodash
+242 silly dependencyIsSatisfied [ 'lodash',
+242 silly dependencyIsSatisfied   '^4.17.10',
+242 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+243 verbose dependencyIsSatisfied lodash true
+244 silly hasDependencyInstalled tsmean-frontend moment
+245 silly dependencyIsSatisfied [ 'moment',
+245 silly dependencyIsSatisfied   '^2.22.2',
+245 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+246 verbose dependencyIsSatisfied moment true
+247 silly hasDependencyInstalled tsmean-frontend moment-timezone
+248 silly dependencyIsSatisfied [ 'moment-timezone',
+248 silly dependencyIsSatisfied   '^0.5.21',
+248 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+249 verbose dependencyIsSatisfied moment-timezone true
+250 silly hasDependencyInstalled tsmean-frontend ng2-ion-range-slider
+251 silly dependencyIsSatisfied [ 'ng2-ion-range-slider',
+251 silly dependencyIsSatisfied   '^2.0.0',
+251 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+252 verbose dependencyIsSatisfied ng2-ion-range-slider true
+253 silly hasDependencyInstalled tsmean-frontend ngx-toastr
+254 silly dependencyIsSatisfied [ 'ngx-toastr',
+254 silly dependencyIsSatisfied   '*',
+254 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+255 verbose dependencyIsSatisfied ngx-toastr true
+256 silly hasDependencyInstalled tsmean-frontend nvd3
+257 silly dependencyIsSatisfied [ 'nvd3',
+257 silly dependencyIsSatisfied   '^1.8.6',
+257 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+258 verbose dependencyIsSatisfied nvd3 true
+259 silly hasDependencyInstalled tsmean-frontend rxjs
+260 silly dependencyIsSatisfied [ 'rxjs',
+260 silly dependencyIsSatisfied   '6.2.0',
+260 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+261 verbose dependencyIsSatisfied rxjs true
+262 silly hasDependencyInstalled @tsmean/backend rxjs
+263 silly dependencyIsSatisfied [ 'rxjs',
+263 silly dependencyIsSatisfied   '5.5.6',
+263 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+264 verbose dependencyIsSatisfied rxjs true
+265 silly hasDependencyInstalled tsmean-frontend rxjs-compat
+266 silly dependencyIsSatisfied [ 'rxjs-compat',
+266 silly dependencyIsSatisfied   '^6.2.1',
+266 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+267 verbose dependencyIsSatisfied rxjs-compat true
+268 silly hasDependencyInstalled tsmean-frontend zone.js
+269 silly dependencyIsSatisfied [ 'zone.js',
+269 silly dependencyIsSatisfied   '0.8.26',
+269 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+270 verbose dependencyIsSatisfied zone.js true
+271 silly hasDependencyInstalled tsmean-frontend sax
+272 silly dependencyIsSatisfied [ 'sax',
+272 silly dependencyIsSatisfied   'https://raw.githubusercontent.com/isaacs/sax-js/master/lib/sax.js',
+272 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+273 verbose dependencyIsSatisfied sax false
+274 silly hasDependencyInstalled tsmean-frontend xmldoc
+275 silly dependencyIsSatisfied [ 'xmldoc',
+275 silly dependencyIsSatisfied   'https://raw.githubusercontent.com/nfarina/xmldoc/master/lib/xmldoc.js',
+275 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/frontend/node_modules' ]
+276 verbose dependencyIsSatisfied xmldoc false
+277 silly hasDependencyInstalled @tsmean/backend @types/supertest
+278 silly dependencyIsSatisfied [ '@types/supertest',
+278 silly dependencyIsSatisfied   '2.0.4',
+278 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+279 verbose dependencyIsSatisfied @types/supertest true
+280 silly hasDependencyInstalled @tsmean/backend cross-env
+281 silly dependencyIsSatisfied [ 'cross-env',
+281 silly dependencyIsSatisfied   '5.1.3',
+281 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+282 verbose dependencyIsSatisfied cross-env true
+283 silly hasDependencyInstalled @tsmean/backend nodemon
+284 silly dependencyIsSatisfied [ 'nodemon',
+284 silly dependencyIsSatisfied   '1.15.1',
+284 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+285 verbose dependencyIsSatisfied nodemon true
+286 silly hasDependencyInstalled @tsmean/backend @nestjs/microservices
+287 silly dependencyIsSatisfied [ '@nestjs/microservices',
+287 silly dependencyIsSatisfied   '4.6.4',
+287 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+288 verbose dependencyIsSatisfied @nestjs/microservices true
+289 silly hasDependencyInstalled @tsmean/backend @nestjs/testing
+290 silly dependencyIsSatisfied [ '@nestjs/testing',
+290 silly dependencyIsSatisfied   '4.6.1',
+290 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+291 verbose dependencyIsSatisfied @nestjs/testing true
+292 silly hasDependencyInstalled @tsmean/backend @nestjs/websockets
+293 silly dependencyIsSatisfied [ '@nestjs/websockets',
+293 silly dependencyIsSatisfied   '4.5.8',
+293 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+294 verbose dependencyIsSatisfied @nestjs/websockets true
+295 silly hasDependencyInstalled @tsmean/backend @types/bcrypt-nodejs
+296 silly dependencyIsSatisfied [ '@types/bcrypt-nodejs',
+296 silly dependencyIsSatisfied   '0.0.30',
+296 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+297 verbose dependencyIsSatisfied @types/bcrypt-nodejs true
+298 silly hasDependencyInstalled @tsmean/backend @types/body-parser
+299 silly dependencyIsSatisfied [ '@types/body-parser',
+299 silly dependencyIsSatisfied   '1.16.8',
+299 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+300 verbose dependencyIsSatisfied @types/body-parser true
+301 silly hasDependencyInstalled @tsmean/backend @types/bunyan
+302 silly dependencyIsSatisfied [ '@types/bunyan',
+302 silly dependencyIsSatisfied   '1.8.4',
+302 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+303 verbose dependencyIsSatisfied @types/bunyan true
+304 silly hasDependencyInstalled @tsmean/backend @types/cors
+305 silly dependencyIsSatisfied [ '@types/cors',
+305 silly dependencyIsSatisfied   '2.8.3',
+305 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+306 verbose dependencyIsSatisfied @types/cors true
+307 silly hasDependencyInstalled @tsmean/backend @types/express
+308 silly dependencyIsSatisfied [ '@types/express',
+308 silly dependencyIsSatisfied   '4.11.1',
+308 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+309 verbose dependencyIsSatisfied @types/express true
+310 silly hasDependencyInstalled @tsmean/backend @types/mongodb
+311 silly dependencyIsSatisfied [ '@types/mongodb',
+311 silly dependencyIsSatisfied   '2.2.20',
+311 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+312 verbose dependencyIsSatisfied @types/mongodb true
+313 silly hasDependencyInstalled @tsmean/backend @types/mysql
+314 silly dependencyIsSatisfied [ '@types/mysql',
+314 silly dependencyIsSatisfied   '0.0.33',
+314 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+315 verbose dependencyIsSatisfied @types/mysql true
+316 silly hasDependencyInstalled @tsmean/backend @types/passport
+317 silly dependencyIsSatisfied [ '@types/passport',
+317 silly dependencyIsSatisfied   '0.3.5',
+317 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+318 verbose dependencyIsSatisfied @types/passport true
+319 silly hasDependencyInstalled @tsmean/backend @types/passport-jwt
+320 silly dependencyIsSatisfied [ '@types/passport-jwt',
+320 silly dependencyIsSatisfied   '3.0.1',
+320 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+321 verbose dependencyIsSatisfied @types/passport-jwt true
+322 silly hasDependencyInstalled @tsmean/backend bcrypt-node
+323 silly dependencyIsSatisfied [ 'bcrypt-node',
+323 silly dependencyIsSatisfied   '0.1.0',
+323 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+324 verbose dependencyIsSatisfied bcrypt-node true
+325 silly hasDependencyInstalled @tsmean/backend bcrypt-nodejs
+326 silly dependencyIsSatisfied [ 'bcrypt-nodejs',
+326 silly dependencyIsSatisfied   '0.0.3',
+326 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+327 verbose dependencyIsSatisfied bcrypt-nodejs true
+328 silly hasDependencyInstalled @tsmean/backend body-parser
+329 silly dependencyIsSatisfied [ 'body-parser',
+329 silly dependencyIsSatisfied   '1.17.2',
+329 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+330 verbose dependencyIsSatisfied body-parser true
+331 silly hasDependencyInstalled @tsmean/backend bunyan
+332 silly dependencyIsSatisfied [ 'bunyan',
+332 silly dependencyIsSatisfied   '1.8.12',
+332 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+333 verbose dependencyIsSatisfied bunyan true
+334 silly hasDependencyInstalled @tsmean/backend class-transformer
+335 silly dependencyIsSatisfied [ 'class-transformer',
+335 silly dependencyIsSatisfied   '0.1.9',
+335 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+336 verbose dependencyIsSatisfied class-transformer true
+337 silly hasDependencyInstalled @tsmean/backend cors
+338 silly dependencyIsSatisfied [ 'cors',
+338 silly dependencyIsSatisfied   '2.8.4',
+338 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+339 verbose dependencyIsSatisfied cors true
+340 silly hasDependencyInstalled @tsmean/backend jsonwebtoken
+341 silly dependencyIsSatisfied [ 'jsonwebtoken',
+341 silly dependencyIsSatisfied   '8.1.1',
+341 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+342 verbose dependencyIsSatisfied jsonwebtoken true
+343 silly hasDependencyInstalled @tsmean/backend mongodb
+344 silly dependencyIsSatisfied [ 'mongodb',
+344 silly dependencyIsSatisfied   '2.2.34',
+344 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+345 verbose dependencyIsSatisfied mongodb true
+346 silly hasDependencyInstalled @tsmean/backend mysql
+347 silly dependencyIsSatisfied [ 'mysql',
+347 silly dependencyIsSatisfied   '2.15.0',
+347 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+348 verbose dependencyIsSatisfied mysql true
+349 silly hasDependencyInstalled @tsmean/backend passport
+350 silly dependencyIsSatisfied [ 'passport',
+350 silly dependencyIsSatisfied   '0.3.2',
+350 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+351 verbose dependencyIsSatisfied passport true
+352 silly hasDependencyInstalled @tsmean/backend passport-jwt
+353 silly dependencyIsSatisfied [ 'passport-jwt',
+353 silly dependencyIsSatisfied   '3.0.1',
+353 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+354 verbose dependencyIsSatisfied passport-jwt true
+355 silly hasDependencyInstalled @tsmean/backend passport-local
+356 silly dependencyIsSatisfied [ 'passport-local',
+356 silly dependencyIsSatisfied   '1.0.0',
+356 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+357 verbose dependencyIsSatisfied passport-local true
+358 silly hasDependencyInstalled @tsmean/backend supertest
+359 silly dependencyIsSatisfied [ 'supertest',
+359 silly dependencyIsSatisfied   '3.0.0',
+359 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+360 verbose dependencyIsSatisfied supertest true
+361 silly hasDependencyInstalled @tsmean/backend typeorm
+362 silly dependencyIsSatisfied [ 'typeorm',
+362 silly dependencyIsSatisfied   '0.1.12',
+362 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+363 verbose dependencyIsSatisfied typeorm true
+364 silly hasDependencyInstalled @tsmean/backend winston
+365 silly dependencyIsSatisfied [ 'winston',
+365 silly dependencyIsSatisfied   '3.0.0-rc1',
+365 silly dependencyIsSatisfied   '/Users/thangcao/Public/loadswarm-angular/backend/node_modules' ]
+366 verbose dependencyIsSatisfied winston true
+367 silly root dependencies []
+368 silly leaf dependencies {
+368 silly leaf dependencies   "@tsmean/backend": [
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "tslint@^5.10.0",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "typescript@2.7.2",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@types/jest@21.1.10",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "jest@21.2.1",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "ts-jest@21.2.4",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@nestjs/common@4.6.4",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@nestjs/core@4.6.4",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@nestjs/swagger@1.1.4",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "class-validator@0.8.1",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "express@4.16.2",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "reflect-metadata@0.1.12",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@types/node@8.9.4",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "ts-node@3.2.1",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "rxjs@5.5.6",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@types/supertest@2.0.4",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "cross-env@5.1.3",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "nodemon@1.15.1",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@nestjs/microservices@4.6.4",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@nestjs/testing@4.6.1",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@nestjs/websockets@4.5.8",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@types/bcrypt-nodejs@0.0.30",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@types/body-parser@1.16.8",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@types/bunyan@1.8.4",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@types/cors@2.8.3",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@types/express@4.11.1",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@types/mongodb@2.2.20",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@types/mysql@0.0.33",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@types/passport@0.3.5",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@types/passport-jwt@3.0.1",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "bcrypt-node@0.1.0",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "bcrypt-nodejs@0.0.3",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "body-parser@1.17.2",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "bunyan@1.8.12",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "class-transformer@0.1.9",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "cors@2.8.4",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "jsonwebtoken@8.1.1",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "mongodb@2.2.34",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "mysql@2.15.0",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "passport@0.3.2",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "passport-jwt@3.0.1",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "passport-local@1.0.0",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "supertest@3.0.0",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "typeorm@0.1.12",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "winston@3.0.0-rc1",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     }
+368 silly leaf dependencies   ],
+368 silly leaf dependencies   "tsmean-frontend": [
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "tslint@5.7.0",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "typescript@2.7.2",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "class-validator@0.8.1",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@angular-devkit/build-angular@0.6.0",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@angular-devkit/build-optimizer@^0.6.3",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@angular/cli@^6.0.5",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@angular/compiler-cli@6.0.3",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@angular/language-service@6.0.3",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@types/datatables.net@^1.10.10",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@types/jasmine@2.5.53",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@types/jasminewd2@2.0.2",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@types/jquery@^3.3.2",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@types/node@6.0.95",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "codelyzer@4.3.0",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "is-docker@1.1.0",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "jasmine-core@3.1.0",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "jasmine-spec-reporter@4.2.1",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "karma@2.0.2",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "karma-chrome-launcher@2.1.1",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "karma-cli@1.0.1",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "karma-coverage-istanbul-reporter@2.0.1",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "karma-jasmine@1.1.2",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "karma-jasmine-html-reporter@1.1.0",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "protractor@5.3.2",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "ts-node@3.2.0",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "webpack@4.8.3",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@angular/animations@6.0.3",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@angular/cdk@6.1.0",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@angular/common@6.0.3",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@angular/compiler@6.0.3",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@angular/core@6.0.3",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@angular/forms@6.0.3",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@angular/http@6.0.3",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@angular/material@6.1.0",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@angular/platform-browser@6.0.3",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@angular/platform-browser-dynamic@6.0.3",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@angular/router@6.0.3",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@ng-bootstrap/ng-bootstrap@^2.0.0",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@tsmean/cookies@1.0.0",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@tsmean/spinner@1.0.1",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@tsmean/toast@0.0.1",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "amazing-time-picker@^1.5.3",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "angular-datatables@^6.0.0",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "core-js@2.5.3",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "d3@^3.4.4",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "datatables.net@^1.10.16",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "datatables.net-dt@^1.10.16",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "hammerjs@2.0.8",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "hwrld@^1.0.1",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "jquery@^3.3.1",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "jspdf@*",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "lodash@^4.17.10",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "moment@^2.22.2",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "moment-timezone@^0.5.21",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "ng2-ion-range-slider@^2.0.0",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "ngx-toastr@*",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "nvd3@^1.8.6",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "rxjs@6.2.0",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "rxjs-compat@^6.2.1",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "zone.js@0.8.26",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "sax@https://raw.githubusercontent.com/isaacs/sax-js/master/lib/sax.js",
+368 silly leaf dependencies       "isSatisfied": false
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "xmldoc@https://raw.githubusercontent.com/nfarina/xmldoc/master/lib/xmldoc.js",
+368 silly leaf dependencies       "isSatisfied": false
+368 silly leaf dependencies     }
+368 silly leaf dependencies   ],
+368 silly leaf dependencies   "@tsmean/shared": [
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "typescript@^2.5.3",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@types/jest@^21.1.4",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "jest@^21.2.1",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "ts-jest@^21.1.3",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@nestjs/common@^4.6.5",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@nestjs/core@^4.6.5",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "@nestjs/swagger@^1.1.4",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "class-validator@^0.8.1",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "express@^4.16.2",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     },
+368 silly leaf dependencies     {
+368 silly leaf dependencies       "dependency": "reflect-metadata@^0.1.12",
+368 silly leaf dependencies       "isSatisfied": true
+368 silly leaf dependencies     }
+368 silly leaf dependencies   ]
+368 silly leaf dependencies }
+369 info Installing external dependencies
+370 verbose actions 1 actions, concurrency 4
+371 silly installInDir frontend [ 'tslint@5.7.0',
+371 silly installInDir   'typescript@2.7.2',
+371 silly installInDir   'class-validator@0.8.1',
+371 silly installInDir   '@angular-devkit/build-angular@0.6.0',
+371 silly installInDir   '@angular-devkit/build-optimizer@^0.6.3',
+371 silly installInDir   '@angular/cli@^6.0.5',
+371 silly installInDir   '@angular/compiler-cli@6.0.3',
+371 silly installInDir   '@angular/language-service@6.0.3',
+371 silly installInDir   '@types/datatables.net@^1.10.10',
+371 silly installInDir   '@types/jasmine@2.5.53',
+371 silly installInDir   '@types/jasminewd2@2.0.2',
+371 silly installInDir   '@types/jquery@^3.3.2',
+371 silly installInDir   '@types/node@6.0.95',
+371 silly installInDir   'codelyzer@4.3.0',
+371 silly installInDir   'is-docker@1.1.0',
+371 silly installInDir   'jasmine-core@3.1.0',
+371 silly installInDir   'jasmine-spec-reporter@4.2.1',
+371 silly installInDir   'karma@2.0.2',
+371 silly installInDir   'karma-chrome-launcher@2.1.1',
+371 silly installInDir   'karma-cli@1.0.1',
+371 silly installInDir   'karma-coverage-istanbul-reporter@2.0.1',
+371 silly installInDir   'karma-jasmine@1.1.2',
+371 silly installInDir   'karma-jasmine-html-reporter@1.1.0',
+371 silly installInDir   'protractor@5.3.2',
+371 silly installInDir   'ts-node@3.2.0',
+371 silly installInDir   'webpack@4.8.3',
+371 silly installInDir   '@angular/animations@6.0.3',
+371 silly installInDir   '@angular/cdk@6.1.0',
+371 silly installInDir   '@angular/common@6.0.3',
+371 silly installInDir   '@angular/compiler@6.0.3',
+371 silly installInDir   '@angular/core@6.0.3',
+371 silly installInDir   '@angular/forms@6.0.3',
+371 silly installInDir   '@angular/http@6.0.3',
+371 silly installInDir   '@angular/material@6.1.0',
+371 silly installInDir   '@angular/platform-browser@6.0.3',
+371 silly installInDir   '@angular/platform-browser-dynamic@6.0.3',
+371 silly installInDir   '@angular/router@6.0.3',
+371 silly installInDir   '@ng-bootstrap/ng-bootstrap@^2.0.0',
+371 silly installInDir   '@tsmean/cookies@1.0.0',
+371 silly installInDir   '@tsmean/spinner@1.0.1',
+371 silly installInDir   '@tsmean/toast@0.0.1',
+371 silly installInDir   'amazing-time-picker@^1.5.3',
+371 silly installInDir   'angular-datatables@^6.0.0',
+371 silly installInDir   'core-js@2.5.3',
+371 silly installInDir   'd3@^3.4.4',
+371 silly installInDir   'datatables.net@^1.10.16',
+371 silly installInDir   'datatables.net-dt@^1.10.16',
+371 silly installInDir   'hammerjs@2.0.8',
+371 silly installInDir   'hwrld@^1.0.1',
+371 silly installInDir   'jquery@^3.3.1',
+371 silly installInDir   'jspdf@*',
+371 silly installInDir   'lodash@^4.17.10',
+371 silly installInDir   'moment@^2.22.2',
+371 silly installInDir   'moment-timezone@^0.5.21',
+371 silly installInDir   'ng2-ion-range-slider@^2.0.0',
+371 silly installInDir   'ngx-toastr@*',
+371 silly installInDir   'nvd3@^1.8.6',
+371 silly installInDir   'rxjs@6.2.0',
+371 silly installInDir   'rxjs-compat@^6.2.1',
+371 silly installInDir   'zone.js@0.8.26',
+371 silly installInDir   'sax@https://raw.githubusercontent.com/isaacs/sax-js/master/lib/sax.js',
+371 silly installInDir   'xmldoc@https://raw.githubusercontent.com/nfarina/xmldoc/master/lib/xmldoc.js' ]
+372 silly installInDir backup /Users/thangcao/Public/loadswarm-angular/frontend/package.json
+373 silly rename [ '/Users/thangcao/Public/loadswarm-angular/frontend/package.json',
+373 silly rename   '/Users/thangcao/Public/loadswarm-angular/frontend/package.json.lerna_backup' ]
+374 silly installInDir writing tempJson { dependencies:
+374 silly installInDir    { tslint: '5.7.0',
+374 silly installInDir      typescript: '2.7.2',
+374 silly installInDir      'class-validator': '0.8.1',
+374 silly installInDir      '@angular-devkit/build-angular': '0.6.0',
+374 silly installInDir      '@angular-devkit/build-optimizer': '^0.6.3',
+374 silly installInDir      '@angular/cli': '^6.0.5',
+374 silly installInDir      '@angular/compiler-cli': '6.0.3',
+374 silly installInDir      '@angular/language-service': '6.0.3',
+374 silly installInDir      '@types/datatables.net': '^1.10.10',
+374 silly installInDir      '@types/jasmine': '2.5.53',
+374 silly installInDir      '@types/jasminewd2': '2.0.2',
+374 silly installInDir      '@types/jquery': '^3.3.2',
+374 silly installInDir      '@types/node': '6.0.95',
+374 silly installInDir      codelyzer: '4.3.0',
+374 silly installInDir      'is-docker': '1.1.0',
+374 silly installInDir      'jasmine-core': '3.1.0',
+374 silly installInDir      'jasmine-spec-reporter': '4.2.1',
+374 silly installInDir      karma: '2.0.2',
+374 silly installInDir      'karma-chrome-launcher': '2.1.1',
+374 silly installInDir      'karma-cli': '1.0.1',
+374 silly installInDir      'karma-coverage-istanbul-reporter': '2.0.1',
+374 silly installInDir      'karma-jasmine': '1.1.2',
+374 silly installInDir      'karma-jasmine-html-reporter': '1.1.0',
+374 silly installInDir      protractor: '5.3.2',
+374 silly installInDir      'ts-node': '3.2.0',
+374 silly installInDir      webpack: '4.8.3',
+374 silly installInDir      '@angular/animations': '6.0.3',
+374 silly installInDir      '@angular/cdk': '6.1.0',
+374 silly installInDir      '@angular/common': '6.0.3',
+374 silly installInDir      '@angular/compiler': '6.0.3',
+374 silly installInDir      '@angular/core': '6.0.3',
+374 silly installInDir      '@angular/forms': '6.0.3',
+374 silly installInDir      '@angular/http': '6.0.3',
+374 silly installInDir      '@angular/material': '6.1.0',
+374 silly installInDir      '@angular/platform-browser': '6.0.3',
+374 silly installInDir      '@angular/platform-browser-dynamic': '6.0.3',
+374 silly installInDir      '@angular/router': '6.0.3',
+374 silly installInDir      '@ng-bootstrap/ng-bootstrap': '^2.0.0',
+374 silly installInDir      '@tsmean/cookies': '1.0.0',
+374 silly installInDir      '@tsmean/spinner': '1.0.1',
+374 silly installInDir      '@tsmean/toast': '0.0.1',
+374 silly installInDir      'amazing-time-picker': '^1.5.3',
+374 silly installInDir      'angular-datatables': '^6.0.0',
+374 silly installInDir      'core-js': '2.5.3',
+374 silly installInDir      d3: '^3.4.4',
+374 silly installInDir      'datatables.net': '^1.10.16',
+374 silly installInDir      'datatables.net-dt': '^1.10.16',
+374 silly installInDir      hammerjs: '2.0.8',
+374 silly installInDir      hwrld: '^1.0.1',
+374 silly installInDir      jquery: '^3.3.1',
+374 silly installInDir      jspdf: '*',
+374 silly installInDir      lodash: '^4.17.10',
+374 silly installInDir      moment: '^2.22.2',
+374 silly installInDir      'moment-timezone': '^0.5.21',
+374 silly installInDir      'ng2-ion-range-slider': '^2.0.0',
+374 silly installInDir      'ngx-toastr': '*',
+374 silly installInDir      nvd3: '^1.8.6',
+374 silly installInDir      rxjs: '6.2.0',
+374 silly installInDir      'rxjs-compat': '^6.2.1',
+374 silly installInDir      'zone.js': '0.8.26',
+374 silly installInDir      sax: 'https://raw.githubusercontent.com/isaacs/sax-js/master/lib/sax.js',
+374 silly installInDir      xmldoc: 'https://raw.githubusercontent.com/nfarina/xmldoc/master/lib/xmldoc.js' } }
+375 silly getExecOpts { cwd: '/Users/thangcao/Public/loadswarm-angular/frontend' }
+376 silly installInDir [ 'npm', [ 'install' ] ]
+377 silly installInDir cleanup /Users/thangcao/Public/loadswarm-angular/frontend/package.json
+378 silly renameSync [ '/Users/thangcao/Public/loadswarm-angular/frontend/package.json.lerna_backup',
+378 silly renameSync   '/Users/thangcao/Public/loadswarm-angular/frontend/package.json' ]
+379 verbose installed leaf tsmean-frontend
+380 error execute callback with error
+381 error Error: Command failed: npm install
+381 error npm ERR! code ENOPACKAGEJSON
+381 error npm ERR! package.json Non-registry package missing package.json: xmldoc@https://raw.githubusercontent.com/nfarina/xmldoc/master/lib/xmldoc.js.
+381 error npm ERR! package.json npm can't find a package.json file in your current directory.
+381 error
+381 error npm ERR! A complete log of this run can be found in:
+381 error npm ERR!     /Users/thangcao/.npm/_logs/2018-07-02T16_33_22_922Z-debug.log
+381 error
+381 error     at Promise.all.then.arr (/Users/thangcao/Public/loadswarm-angular/node_modules/execa/index.js:236:11)
+381 error     at <anonymous>

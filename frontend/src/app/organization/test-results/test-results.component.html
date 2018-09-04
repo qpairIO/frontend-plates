@@ -1,0 +1,25 @@
+<h2 class="page-title" layout="layout" layout-align="start center"><span flex="flex">Latest Test Results</span></h2>
+<mat-card flex="flex" layout="column">
+  <div class="scrollable grids-table" layout="layout" flex="flex">
+    <table class="table table-bordered table-striped table-2-columns" md-table="md-table" flex="flex" *ngIf="testResults.length">
+      <thead md-head="md-head" md-order="query.order">
+        <tr md-row="md-row">
+          <th md-column="md-column" style="text-align: center">Project Name</th>
+          <th md-column="md-column" style="text-align: center">Test Name</th>
+          <th md-column="md-column" style="text-align: center">Grid Name</th>
+          <th md-column="md-column" style="text-align: center">Description</th>
+        </tr>
+      </thead>
+      <tbody md-body="md-body">
+        <tr md-row="md-row" *ngFor="let testResult of testResults " (click)="viewTest(testResult)">
+          <td class="project-name" md-cell="md-cell" style="text-align: center">{{testResult.name}}</td>
+          <td md-cell="md-cell" style="text-align: center">{{testResult.testName}}</td>
+          <td md-cell="md-cell" style="text-align: center">{{testResult.gridName}}</td>
+          <td md-cell="md-cell" style="text-align: center">{{testResult.testDescription}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 [hidden]="testResults.length">There is no test results</h3>
+  </div>
+  <!-- <md-table-pagination md-label="{{options.label}}" md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{testResultsCount}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="changePage" ng-show="testResultsCount &amp;&amp; !isLoadingTestResults"></md-table-pagination> -->
+</mat-card>

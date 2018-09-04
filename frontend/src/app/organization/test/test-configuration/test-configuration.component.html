@@ -1,0 +1,54 @@
+<h3>Parameters</h3>
+<p>
+  <button class="btn btn-info" (click)="addNewParameter()" [disabled]="global.isTestResults || global.runTestStatus">Add new parameter</button>
+</p>
+<div layout="column" style="width: 100%">
+  <div class="grids-table" layout="layout" style="overflow: visible; margin-left: 0">
+    <table class="table table-bordered table-striped table-2-columns" md-table="md-table" flex="flex">
+      <thead md-head="md-head" md-order="query.order">
+        <tr md-row="md-row">
+          <th class="md-column ng-isolate-scope" md-column="md-column" style="text-align: center">NAME</th>
+          <th class="md-column ng-isolate-scope" md-column="md-column" style="text-align: center">VALUE</th>
+        </tr>
+      </thead>
+      <tbody md-body="md-body">
+        <tr md-row="md-row" *ngFor="let item of global.parameters; let i = index">
+          <td md-cell="md-cell" style="text-align: center">
+            <p style="padding-right: 10px">
+              <input class="form-control" [(ngModel)]="item.name" [disabled]="global.isTestResults || global.runTestStatus"/>
+            </p>
+          </td>
+          <td md-cell="md-cell" style="text-align: center">
+            <p layout="layout">
+              <input class="form-control" [(ngModel)]="item.value" [disabled]="global.isTestResults || global.runTestStatus" (change)="onValueChange(item)"/><span></span>
+              <button class="btn" (click)="removeParameter(i)" [hidden]="global.isTestResults || global.runTestStatus"><i class="fa fa-remove"></i></button>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<h3>User defined properties</h3>
+<div flex="flex" layout="column" style="width: 100%">
+  <div class="grids-table" layout="layout" style="overflow: visible; margin-left: 0" flex="50">
+    <table class="table table-bordered table-striped table-2-columns" md-table="md-table" flex="flex">
+      <thead md-head="md-head" md-order="query.order">
+        <tr md-row="md-row">
+          <th class="md-column ng-isolate-scope" md-column="md-column" style="text-align: center; width: 50%">NAME</th>
+          <th class="md-column ng-isolate-scope" md-column="md-column" style="text-align: center">VALUE</th>
+        </tr>
+      </thead>
+      <tbody md-body="md-body">
+        <tr md-row="md-row" *ngFor="let property of global.properties">
+          <td md-cell="md-cell" style="text-align: center">{{property.name}}</td>
+          <td md-cell="md-cell" style="text-align: center">
+            <p layout="layout">
+              <mat-checkbox [(ngModel)]="property.value" [disabled]="global.isTestResults || global.runTestStatus">Yes</mat-checkbox>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

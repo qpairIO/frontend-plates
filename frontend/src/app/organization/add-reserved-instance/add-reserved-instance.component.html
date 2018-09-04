@@ -1,0 +1,47 @@
+<div class="modal-content">
+	<div id="add-reserved-instance">
+	  <div style="width:100%" class="container">
+	    <div class="row packages">
+	      <mat-radio-group  [(ngModel)]="model.packageId">
+	        <div *ngFor="let package of data.packages" (click)="selectPackage(package)" class="col-md-6 package-item">
+	          <div [ngClass]="{'selected': package.id === model.packageId}" class="item">
+	            <label>{{package.title}}</label><br/><span>{{package.discount}} total discount</span><br/><span>{{package.description}}</span>
+	            <mat-radio-button [value]="package.id" aria-label="package.id" class="md-primary"></mat-radio-button>
+	          </div>
+	        </div>
+	      </mat-radio-group>
+	    </div>
+	    <div class="row">
+	      <div class="col-xs-12 text-center"><strong>You have {{model.quantity}} of {{model.instance.instanceType}}, {{model.instance.cloud}}, {{model.instance.operatingSystem}}</strong></div>
+	    </div>
+	    <div class="row">
+	        <div class="form-group col-md-6">
+	          <label>Quantity</label>
+	          <input [(ngModel)]="model.quantity" type="number" class="form-control"/>
+	        </div>
+	        <div class="form-group col-md-6">
+	          <label>Start month</label>
+	          <select [(ngModel)]="model.startMonth" class="form-control">
+	            <option *ngFor="let month of data.months" [ngValue]="month">{{month}}</option>
+	          </select>
+	        </div>
+	        <div class="form-group col-md-6">
+	          <input id="auto-renew-checkbox" type="checkbox" [(ngModel)]="model.autoRenew" ng-true-value="true" ng-false-value="false" class="form-check-input"/>
+	          <label for="auto-renew-checkbox" style="font-weight:normal;margin-left:5px;" class="form-check-label">Auto-renew at the end of every period?</label>
+	        </div>
+	        <div class="form-group col-md-6">
+	          <input id="dedicated-instance-tenancy" type="checkbox" [(ngModel)]="model.dedicatedInstanceTenancy" ng-true-value="true" ng-false-value="false" class="form-check-input"/>
+	          <label for="dedicated-instance-tenancy" style="font-weight:normal;margin-left:5px;" class="form-check-label">Use dedicated instance tenancy?</label>
+	        </div>
+	    </div>
+	    <div style="padding:10px 0 0 0;border-top:1px solid #ccc" class="row">
+	      <div class="form-group col-md-4 text-center price"><span>On-demand hourly price</span><br/><strong>$1.76</strong></div>
+	      <div class="form-group col-md-4 text-center price"><span>RI hourly price</span><br/><strong>$0.40</strong></div>
+	      <div class="form-group col-md-4 text-center price"><span>RI upfront price</span><br/><strong>$4920.00</strong></div>
+	    </div>
+	    <div style="padding:10px 0;border-top:1px solid #ccc;background: rgba(204, 204, 204, 0.3);" class="row">
+	      <div class="col-xs-12"><a (click)="submit()" class="btn btn-primary pull-right">Add Reserved Instance</a><a (click)="cancel()" style="margin-right: 10px" class="btn btn-default pull-right">Close</a></div>
+	    </div>
+	  </div>
+	</div>
+</div>

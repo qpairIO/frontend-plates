@@ -1,0 +1,22 @@
+.topnav {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    background: #2d2d2d;
+    color:#fff;
+}
+
+.bs-topnav {
+    background: #2d2d2d;
+    color:#fff;
+}
+
+.home-button {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}

@@ -1,0 +1,28 @@
+<div id="cost-analysis" layout="column" flex="flex" class="scrollable screen-content" style="overflow: visible;">
+  <mat-toolbar class="layout-align-start-center layout-row">
+    <i class="glyph-icon icon-home" style="color:DeepSkyBlue" title=".icon-home"></i>
+    <span clas="title"> Dashboard </span>
+  </mat-toolbar>
+  <div class="layout-row layout-align-between-center">
+    <mat-card class="widget flex">
+      <div class="widget-title text-center">Total # of Projects</div>
+      <div class="number"> <b>{{dashboardStats.projects}}</b>
+      </div>
+    </mat-card>
+    <mat-card class="widget flex">
+      <div class="widget-title text-center">Total # of Test Runs</div>
+      <div class="number"> <b>{{dashboardStats.testResults}}</b>
+      </div>
+    </mat-card>
+    <mat-card class="widget flex">
+      <div class="widget-title text-center">Total # of Users</div>
+      <div class="number"> <b>{{dashboardStats.users}}</b></div>
+    </mat-card>
+  </div>
+  <div class="layout-row layout-align-center-stretch widget flex">
+    <mat-card style="padding:5px">
+      <div class="text-center" [hidden]="!loading"><br/><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><br/></div>
+      <iframe style="width: 100%;height: 100%;border: none;" [hidden]="loading" src="http://grafana.deploybytes.com/d/tmOUfuGmz/kubernetes-cluster-monitoring-via-prometheus?refresh=10s&orgId=1&theme=light&kiosk" (load)="onViewLoad()"></iframe>
+    </mat-card>
+  </div>
+</div>

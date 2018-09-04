@@ -1,0 +1,57 @@
+<div class="step-container">
+    <div class="step-content" style="height:500px;overflow-x: auto">
+        <div class="cloud-watch-setup" layout="row" layout-align="start start">
+            <div flex="33" layout="column">
+              <label class="control-label" style="font-size: 16px;line-height:34px">EC2 Instance ID</label>
+              <div class="instance-id" layout="row" layout-align="start center">
+                <input class="form-control" [(ngModel)]="instanceId" flex="flex" type="text" placeholder="instance id" style="max-width: 300px; margin: 5px">
+              </div>
+            </div>
+          </div>
+          <div flex="33" layout="layout" layout-align="end center" style="margin-right:15px;">
+            <div class="pull-right-mobile" uib-dropdown="uib-dropdown" auto-close="outsideClick">
+                <mat-form-field>
+                    <mat-select placeholder="Selected Grid Graphs" [(ngModel)]="selectedGraps" [formControl]="metricControl" multiple>
+                        <mat-select-trigger>
+                            {{metricControl.value ? metricControl.value[0] : ''}}
+                            <span *ngIf="metricControl.value?.length > 1" class="example-additional-selection">
+                              (+{{metricControl.value.length - 1}} others)
+                            </span>
+                          </mat-select-trigger>
+                      <mat-option *ngFor="let metric of metrics" (click)="showMetric(metric)" [value]="metric.name">{{metric.name}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+              
+              <!-- <button class="btn btn-primary" id="single-button" uib-dropdown-toggle="uib-dropdown-toggle">selectedGridt Graphs<span class="caret"></span></button>
+              <ul class="dropdown-menu" uib-dropdown-menu="uib-dropdown-menu" role="menu" aria-labelledby="single-button" style="max-height: 170px;overflow-y: auto">
+                <li role="menuitem" *ngFor="let metric of metrics"><a href="javascript:void(0)">
+                    <mat-checkbox [(ngModel)]="metric.show">{{metric.name}}</mat-checkbox></a>
+                  </li>
+              </ul> -->
+            </div><span>&nbsp;&nbsp;&nbsp;</span>
+            <div class="btn btn-success pull-right-mobile" (click)="drawCharts()">Generate Graphs</div>
+          </div>
+        <div class="cloud-watch" layout="row" layout-wrap="layout-wrap" flex="flex" style="overflow-y: auto;width: 100%; margin-top: 10px" grid="global.selectedGrid">
+            <div *ngFor="let metric of metrics" layout="column" [hidden]="!metric.show">
+              <div class="header" layout="row" layout-align="start center">
+                  
+                <div flex="flex">{{metric.name}}</div>
+                <div *ngFor="let type of metric.types">
+                <mat-form-field>
+                    <mat-select placeholder="" [(ngModel)]="metric[type.name].value"  >
+                      <mat-option *ngFor="let opt of type.arr" [value]="opt.value" (click)="selectMetric(metric, type, opt)">
+                        {{opt.text}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <button class="fa fa-close" (click)="closeMetric(metric)"></button>
+              </div>
+              <div class="graph" id="chart_{{metric.name}}">
+                 
+              </div>
+            </div>
+          </div>
+          <div layout="column" layout-align="center center" *ngIf="isLoading" class="loading-overlay boxed layout-align-center-center layout-column" aria-hidden="false" ><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></div>
+    </div>
+</div>

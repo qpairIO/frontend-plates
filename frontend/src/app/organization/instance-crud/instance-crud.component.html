@@ -1,0 +1,56 @@
+<div class="modal-content">
+	<div id="crud-instance">
+	  <div style="width:100%" class="container">
+	    <div class="row">
+	      <div layout="row" class="col-xs-12 provider-list layout-align-space-between-center layout-row">
+	        <div *ngFor="let provider of data.providers" class="provider-item layout-align-center-center layout-column" [ngClass]="{'active': isSelected(provider)}" (click)="selectProvider(provider)"><img [src]="provider.logo"/><strong>{{provider.name}}</strong><span class="marker"></span><i [ngClass]="{'fa-close': !isSelected(provider), 'fa-check': isSelected(provider)}" class="fa"></i></div>
+	      </div>
+	    </div>
+	    <div class="row">
+				<div class="col-xs-12 text-center">
+					<div *ngFor="let slider of sliders" class="col-md-4 text-center">
+						 <label>{{slider.name}}</label>
+						<ion-range-slider #sliderElement
+		          type="double"
+		          [min]="slider.options.floor"
+		          [max]="slider.options.ceil"
+		          [from]="slider.options.from"
+		          [to]="slider.options.to"
+							[step]="slider.options.step"
+							(onChange)="onSliderChange($event, slider)"
+							>
+						</ion-range-slider>
+						<span>From <strong> {{slider.translate(slider.minValue)}} </strong> to <strong> {{slider.translate(slider.maxValue)}} </strong></span>
+					</div>
+				</div>
+	    </div>
+	    <div class="row">
+	      <div class="col-xs-12 text-center"><span>Your filters matched <strong>8</strong> of <strong>143</strong> instance types.</span></div>
+	    </div>
+	    <div class="row">
+	      <div class="col-xs-12">
+	        <table datatable="ng" [dtOptions]="dtOptions" class="row-border hover">
+	          <thead>
+	            <tr>
+	              <th>Instance type</th>
+	              <th>vCPUs</th>
+	              <th>RAM</th>
+	              <th>HDD</th>
+	              <th>Hourly cost</th>
+	            </tr>
+	          </thead>
+	          <tbody>
+	            <tr *ngFor="let instance of data.instances">
+	              <td><img [src]="instance.provider.logo"/>{{instance.instanceType}}</td>
+	              <td>{{instance.cpus}}</td>
+	              <td>{{instance.ram}}GB</td>
+	              <td>{{instance.hdd}}GB</td>
+	              <td> <span [innerHTML]="dollar()"></span>{{instance.hourlyCost}}</td>
+	            </tr>
+	          </tbody>
+	        </table>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</div>

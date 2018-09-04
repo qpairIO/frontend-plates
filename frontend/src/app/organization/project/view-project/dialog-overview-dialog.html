@@ -1,0 +1,10 @@
+<div class="header-box">
+CREATE NEW TESTS BY IMPORTING FROM GIT REPO
+</div>
+<div class="content-box">
+Git Repo Link <input class="form-control" [(ngModel)]="githubLink" name="repoLink">
+</div>
+<div class="footer-box">
+  <button class="btn btn-primary" (click)="cancel()">Cancel</button>
+  <button class="btn btn-primary" [disabled]="!githubLink"  (click)="createGitHubLink()">Create</button>
+</div>

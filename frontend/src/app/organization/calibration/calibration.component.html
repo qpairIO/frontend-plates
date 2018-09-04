@@ -1,0 +1,173 @@
+<div id="calibration" class="screen-content scrollable layout-column flex">
+  <mat-toolbar class="layout-align-start-center layout-row">
+    <i title=".icon-calculator" style="color: BlueViolet" class="glyph-icon icon-calculator"></i>
+    <span>Calibration</span>
+  </mat-toolbar>
+  <mat-card class="layout-column flex scrollable">
+    <div id="pattern-calculator">
+      <div class="row">
+        <div class="col-md-12">
+          <label>Enter the load mix</label>
+        </div>
+        <form #caForm="ngForm" (ngSubmit)="calibrate()" novalidate="novalidate" class="usage-model-form">
+          <div class="form-group" *ngFor="let load of loadMix">
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Name" (ngModel)="model.loadMix[$index].name">
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Percent" (ngModel)="model.loadMix[$index].percent">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-xs-12">
+                <button type="button" (click)="addLoadMix()" class="btn btn-primary"><i class="fa fa-plus"></i></button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <label>Cloud Provider</label>
+        </div>
+        <form class="usage-model-form">
+          <div class="col-xs-12 provider-list layout-align-space-between-center layout-row">
+            <div *ngFor="let provider of providers" class="provider-item layout-align-center-center layout-column" (click)="selectProvider(provider)"  [ngClass]="{'active': isSelected(provider)}">
+                <img [src]="provider.logo">
+                <strong>{{provider.name}}<span class="marker"></span></strong>
+                <i class="fa" [ngClass]="{'fa-close': !isSelected(provider), 'fa-check': isSelected(provider)}"></i>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <label>Select Test</label>
+        </div>
+        <form class="usage-model-form">
+          <div class="form-group">
+            <div class="col-md-6">
+              <select class="form-control" [(ngModel)]="model.selectedTest" name="selectedTest">
+                <option value="test1">Test 1</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-xs-12">
+                <button type="button" [disabled]="runningTest || !selectedProviders.length" (click)="runTest()" class="btn btn-primary" [innerHTML]="runningTest ? 'Running The Test.....' : 'Run Test'">Run Test</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="row" [hidden]="step < 2">
+        <div class="col-xs-12">
+          <label>Recommended Instances</label>
+        </div>
+        <form class="usage-model-form">
+          <div class="col-xs-12 provider-list layout-align-start-center layout-row">
+            <div *ngFor="let item of models" (click)="selectModel(item)" [ngStyle]="item.style" style="margin-right:20px;border:none;" class="provider-item layout-align-center-center layout-column"><img [src]="item.provider.logo"/><strong>{{item.instanceType}}</strong></div>
+          </div>
+        </form>
+      </div>
+
+      <div class="row" [hidden]="!selectedModelId">
+        <div class="col-xs-12">
+          <label>Input all the values required.</label>
+        </div>
+        <form class="usage-model-form">
+          <div class="col-xs-12">
+            <div class="content">
+              <div class="row">
+                <div [hidden]="!selectedModel.hasC" class="col-md-3">
+                  <div class="box bg-blue-alt">
+                    <div class="title">C</div>
+                    <input type="text" [(ngModel)]="cValue" name="cValue" placeholder="C" class="form-control"/>
+                    <div class="description">
+                      <div>Number of Servers</div>
+                    </div>
+                    <div class="small">Number of servers in parallel open to attend customers.</div>
+                  </div>
+                </div>
+                <div [hidden]="!selectedModel.hasM" class="col-md-3">
+                  <div class="box bg-blue-alt">
+                    <div class="title">M</div>
+                    <input type="text" [(ngModel)]="mValue" name="mValue" placeholder="M" class="form-control"/>
+                    <div class="description">
+                      <div>Population</div>
+                    </div>
+                    <div class="small">Number of customers that can use the service.</div>
+                  </div>
+                </div>
+                <div [hidden]="!selectedModel.hasK" class="col-md-3">
+                  <div class="box bg-blue-alt">
+                    <div class="title">K</div>
+                    <input type="text" ([ngModel])="kValue" name="kValue" placeholder="K" class="form-control"/>
+                    <div class="description">
+                      <div>Queue Capacity</div>
+                    </div>
+                    <div class="small">The maximum number of clients the queue can hold.</div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="box main-box bg-gray"><span>Arrival and Service rates</span>
+                    <div>
+                      <h3>λ Arrivals / Day</h3>
+                      <div class="form-group layout-row">
+                        <div class="flex-33">
+                          <input type="number" [(ngModel)]="arrival.value" name="arrivalValue" (ngModelChange)="updateValue(arrival)" class="form-control"/>
+                        </div>
+                        <span style="width: 10px"></span>
+                        <custom-select-object [items]="units" [model]="arrival.unit" (update)="convertUnit($event, arrival)" [valueField]="'key'" [shortName]="'shortName'" class="flex-33 custom-select-object"></custom-select-object>
+                        <span style="width: 10px"></span>
+                        <custom-select-object [items]="units" [model]="arrival.converter" (update)="convertUnit($event, arrival)" [valueField]="'key'" [staticText]="'Convert'" class="flex-33 custom-select-object"></custom-select-object>
+                      </div>
+                    </div>
+                    <div>
+                      <h3>μ Services / Day</h3>
+                      <div class="form-group layout-row">
+                        <div class="flex-33">
+                          <input type="number" [(ngModel)]="service.value" name="serviceValue" (ngModelChange)="updateValue(service)" class="form-control"/>
+                        </div>
+                        <span style="width: 10px"></span>
+                        <custom-select-object [items]="units" [model]="service.unit" (update)="convertUnit($event, service)" [valueField]="'key'" [shortName]="'shortName'" class="flex-33 custom-select-object"></custom-select-object>
+                        <span style="width: 10px"></span>
+                        <custom-select-object [items]="units" [model]="service.converter" (update)="convertUnit($event, service)" [valueField]="'key'" [staticText]="'Convert'" class="flex-33 custom-select-object"></custom-select-object>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <button (click)="calculate()" style="text-transform: uppercase;margin: 20px 0;" class="btn btn-primary">Calculate</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div [hidden]="!calculated" class="result-boxes row">
+        <div class="col-xs-12">
+          <label>Result</label>
+        </div>
+        <form class="usage-model-form">
+          <div class="col-xs-12">
+            <div class="row">
+              <div *ngFor="let r of results" class="col-md-3">
+                <div class="box bg-gray">
+                  <div class="title number"><strong [ngStyle]="{color: r.color, display: 'inline-block'}">{{result[r.value] | number: '3.4 - 10'}}&nbsp;</strong><span class="small">{{r.unit}}</span></div>
+                  <div class="title"><strong class="small">{{r.type}}&nbsp;</strong><span class="gray small">{{r.title}}</span></div>
+                  <div [ngStyle]="{color: r.color}" class="small">{{r.description}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </mat-card>
+</div>

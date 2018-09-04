@@ -1,0 +1,338 @@
+<h2 class="page-title">HA Testing</h2>
+
+ <mat-card class="scrollable layout-column flex ha-testing" >
+  <div class="panel">
+    <div class="panel-body">
+      <div class="example-box-wrapper">
+         <form class="form-horizontal bordered-row select-option">
+            <mat-radio-group (change)="updateOption()" [(ngModel)]="options.name" [ngModelOptions]="{standalone: true}">
+                <mat-radio-button  *ngFor=" let option of options.list" [value]="option">{{option}}</mat-radio-button>
+              
+              </mat-radio-group>
+    
+          <div class="clear"></div>
+     
+       
+          <select class="form-control dropdown-runtest" *ngIf="options.name == 'Applications'" (change)="selectApplication($event.target.value)">
+            <option [value]="">Select Application</option>
+            <option [ngValue]="application.projectId" value="{{application.id}}" *ngFor="let application of  applications" >{{application.name}}</option>
+          </select>
+          <select class="form-control dropdown-runtest" *ngIf="options.name == 'Applications'" (change)="selectTest($event.target.value)" [disabled]="options.disabledSelectTest">
+            <option value="" ng-selected="!options.testId">Select Test</option>
+            <option value="{{test.id}}" *ngFor=" let test of  tests" >{{test.name}}</option>
+          </select>
+          <button class="btn-info run-test" *ngIf="options.name == 'Applications'" [disabled]="!options.testId || options.runningTest" (click)="runTest()">Run test</button>
+          <button class="btn-info run-test" *ngIf="options.name == 'Applications' &amp;&amp; options.runningTest" (click)="stopTest()" style="margin-left:10px">Stop test</button>
+          <div class="clear"></div>
+        </form> 
+      </div>
+    </div>
+  </div>
+  <div class="panel" *ngIf="options.name != ''">
+    <div class="panel-body">
+      <div class="example-box-wrapper">
+        <form class="form-horizontal bordered-row">
+          <div class="form-group" *ngIf="options.name == 'Stack'">
+            <div class="row">
+              <div class="col-sm-1"><i class="glyph-icon tooltip-button demo-icon icon-database" style="color: orangered" title="" data-original-title=".icon-database"></i></div>
+              <div class="col-sm-5">
+                <h3 class="font-bold">Application Server</h3>
+              </div>
+            </div>
+            <div class="example-box-wrapper">
+              <div class="scrollable grids-table layout-column flex" layout="layout" flex="flex">
+                <table class="table table-bordered table-striped table-2-columns flex" div="div" flex="flex">
+                  <thead md-head="md-head" md-order="query.order">
+                    <tr md-row="md-row">
+                      <th md-column="md-column" style="text-align: center"></th>
+                      <th md-column="md-column" style="text-align: center">Name</th>
+                      <th md-column="md-column" style="text-align: center">Instance ID</th>
+                      <th md-column="md-column" style="text-align: center">Instance Type</th>
+                      <th md-column="md-column" style="text-align: center">Status</th>
+                      <th md-column="md-column" style="text-align: center">Availability Zone</th>
+                    </tr>
+                  </thead>
+                  <tbody md-body="md-body">
+                    <tr md-row="md-row">
+                      <td md-cell="md-cell" style="text-align: center">
+                        <input id="todo-1" type="checkbox" name="todo-1"/>
+                      </td>
+                      <td md-cell="md-cell" style="text-align: center">Core Services</td>
+                      <td md-cell="md-cell" style="text-align: center">i-267768f5</td>
+                      <td md-cell="md-cell" style="text-align: center">t2.small</td>
+                      <td md-cell="md-cell" style="text-align: center"><i class="glyph-icon icon-circle" style="color: limegreen" title=".icon-circle"></i>                            running</td>
+                      <td md-cell="md-cell" style="text-align: center">us-east-1c</td>
+                    </tr>
+                    <tr md-row="md-row">
+                      <td md-cell="md-cell" style="text-align: center">
+                        <input id="todo-1" type="checkbox" name="todo-1"/>
+                      </td>
+                      <td md-cell="md-cell" style="text-align: center">Billing Services</td>
+                      <td md-cell="md-cell" style="text-align: center">i-444368d6</td>
+                      <td md-cell="md-cell" style="text-align: center">t2.medium</td>
+                      <td md-cell="md-cell" style="text-align: center"><i class="glyph-icon icon-circle" style="color: red" title=".icon-circle"></i>                            stopped</td>
+                      <td md-cell="md-cell" style="text-align: center">us-east-1d</td>
+                    </tr>
+                    <tr md-row="md-row">
+                      <td md-cell="md-cell" style="text-align: center">
+                        <input id="todo-1" type="checkbox" name="todo-1"/>
+                      </td>
+                      <td md-cell="md-cell" style="text-align: center">LoadSwarm</td>
+                      <td md-cell="md-cell" style="text-align: center">i-5673cacc</td>
+                      <td md-cell="md-cell" style="text-align: center">t2.micro</td>
+                      <td md-cell="md-cell" style="text-align: center"><i class="glyph-icon icon-circle" style="color: limegreen" title=".icon-circle"></i>                            running</td>
+                      <td md-cell="md-cell" style="text-align: center">us-east-1d</td>
+                    </tr>
+                    <tr md-row="md-row">
+                      <td md-cell="md-cell" style="text-align: center">
+                        <input id="todo-1" type="checkbox" name="todo-1"/>
+                      </td>
+                      <td md-cell="md-cell" style="text-align: center">es-kibana</td>
+                      <td md-cell="md-cell" style="text-align: center">i-00d66265d</td>
+                      <td md-cell="md-cell" style="text-align: center">t2.medium</td>
+                      <td md-cell="md-cell" style="text-align: center"><i class="glyph-icon icon-circle" style="color: limegreen" title=".icon-circle"></i>                            running</td>
+                      <td md-cell="md-cell" style="text-align: center">us-east-1b</td>
+                    </tr>
+                    <tr md-row="md-row">
+                      <td md-cell="md-cell" style="text-align: center">
+                        <input id="todo-1" type="checkbox" name="todo-1"/>
+                      </td>
+                      <td md-cell="md-cell" style="text-align: center">selenium-test</td>
+                      <td md-cell="md-cell" style="text-align: center">i-256t889r</td>
+                      <td md-cell="md-cell" style="text-align: center">t2.medium</td>
+                      <td md-cell="md-cell" style="text-align: center"><i class="glyph-icon icon-circle" style="color: red" title=".icon-circle"></i>                            stopped</td>
+                      <td md-cell="md-cell" style="text-align: center">us-east-1c</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="form-group" *ngIf="options.name == 'Applications' &amp;&amp; options.finishedRuntest">
+            <div class="row">
+              <div class="col-sm-1"><i class="glyph-icon tooltip-button demo-icon icon-database" style="color: orangered" title="" data-original-title=".icon-database"></i></div>
+              <div class="col-sm-5">
+                <h3 class="font-bold">{{options.application.name}}</h3>
+                
+              </div>
+            </div>
+            <div class="example-box-wrapper box-app">
+              <div class="scrollable grids-table layout-column flex" layout="layout" flex="flex">
+                <table class="table table-bordered table-striped table-2-columns heatmapmain" div="div" flex="flex">
+                  <thead md-head="md-head" md-order="query.order">
+                    <tr md-row="md-row">
+                      <th class="text-center">ELB </th>
+                      <th class="text-center">Instances</th>
+                      <th class="text-center" style="width:150px">Status</th>
+                      <th class="text-center" style="width:190px">Failures</th>
+                      <th class="text-center">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody md-body="md-body">
+                    <tr *ngFor=" let elb of elbs index as indexElb ">
+                      <td class="text-center" md-cell="md-cell">{{elb.name}}</td>
+                      <td class="text-center" md-cell="md-cell">
+                        <p class="instance-name" *ngFor=" let instance of elb.instances">{{instance.name}}</p>
+                      </td>
+                      <td class="text-center status" md-cell="md-cell">
+                        <p class="instance-name" *ngFor=" let instance of elb.instances"><i class="glyph-icon icon-circle" style="color: red" title=".icon-circle" *ngIf="instance.status == 'stopped'"></i><i class="glyph-icon icon-circle" style="color: limegreen" title=".icon-circle" *ngIf="instance.status == 'running'"></i>    {{instance.status}}</p>
+                      </td>
+                      <td class="text-center" md-cell="md-cell">
+                        <p *ngFor=" let instance of elb.instances ">
+                          <select class="form-control"  (change)="selectFailure($event.target.value, instance)">
+                            <option *ngFor=" let failure of failures" value="{{failure}}" [selected]="instance.failure == failure" >{{failure}}</option>
+                          </select>
+                        </p>
+                      </td>
+                      <td class="text-center all-action">
+                        <p class="action" *ngFor=" let instance of elb.instances index as indexInstance  " (click)="changeAction(indexElb, indexInstance)" [ngClass]="{ 'stopped': instance.action == 'start', 'running': instance.action == 'stop' }">{{instance.actionLabel}}</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="heatmap">
+              <div class="application-name">{{options.application.name}}</div>
+              <div class="region-dropdown">
+                <select class="form-control">
+                  <option>Select Region</option>
+                  <option *ngFor=" let region of regions" value="{{region}}">{{region}}</option>
+                </select>
+              </div>
+              <div class="clear"></div>
+              <div class="logs" *ngIf="(options.runningTest || options.finishedRuntest) &amp;&amp; actions.length &gt; 0">
+                <h3>Logs</h3>
+                <div class="log-list">
+                  <p *ngFor=" let action of actions">{{action}}</p>
+                </div>
+                <button class="btn-info button-blue" (click)="downloadReport()">Generate Report</button>
+              </div>
+              <div class="all-elbs" *ngFor=" let elb of elbs ">
+                <div class="elb-item">{{elb.name}}<i class="glyph-icon icon-circle" style="color: orange" title=".icon-circle" *ngIf="elb.status == 'notstopped'"></i><i class="glyph-icon icon-circle" style="color: red" title=".icon-circle" *ngIf="elb.status == 'stopped'"></i><i class="glyph-icon icon-circle" style="color: limegreen" title=".icon-circle" *ngIf="elb.status == 'running'"></i>
+                  <div class="clear"></div>
+                  <div matTooltip="{{instance.name}}" class="instance" *ngFor=" let instance of elb.instances  "><span [ngClass]="{'start': instance.status == 'running', 'stop': instance.status == 'stopped'}">
+                     </span></div>
+                  <div class="clear"></div>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </div>
+          </div>
+          <div class="form-group" *ngIf="options.name == 'Stack'">
+            <div class="row">
+              <div class="col-sm-1"><i class="glyph-icon tooltip-button demo-icon icon-database" style="color: orangered" title="" data-original-title=".icon-database"></i></div>
+              <div class="col-sm-5">
+                <h3 class="font-bold">Web Server</h3>
+              </div>
+            </div>
+            <div class="example-box-wrapper">
+              <div class="scrollable grids-table layout-column flex" layout="layout" flex="flex">
+                <table class="table table-bordered table-striped table-2-columns" div="div" flex="flex">
+                  <thead md-head="md-head" md-order="query.order">
+                    <tr md-row="md-row">
+                      <th md-column="md-column" style="text-align: center"></th>
+                      <th md-column="md-column" style="text-align: center">Name</th>
+                      <th md-column="md-column" style="text-align: center">Instance ID</th>
+                      <th md-column="md-column" style="text-align: center">Instance Type</th>
+                      <th md-column="md-column" style="text-align: center">Status</th>
+                      <th md-column="md-column" style="text-align: center">Availability Zone</th>
+                    </tr>
+                  </thead>
+                  <tbody md-body="md-body">
+                    <tr md-row="md-row">
+                      <td md-cell="md-cell" style="text-align: center">
+                        <input id="todo-1" type="checkbox" name="todo-1"/>
+                      </td>
+                      <td md-cell="md-cell" style="text-align: center">Core Services</td>
+                      <td md-cell="md-cell" style="text-align: center">i-267768f5</td>
+                      <td md-cell="md-cell" style="text-align: center">t2.small</td>
+                      <td md-cell="md-cell" style="text-align: center"><i class="glyph-icon icon-circle" style="color: limegreen" title=".icon-circle"></i>                            running</td>
+                      <td md-cell="md-cell" style="text-align: center">us-east-1c</td>
+                    </tr>
+                    <tr md-row="md-row">
+                      <td md-cell="md-cell" style="text-align: center">
+                        <input id="todo-1" type="checkbox" name="todo-1"/>
+                      </td>
+                      <td md-cell="md-cell" style="text-align: center">Billing Services</td>
+                      <td md-cell="md-cell" style="text-align: center">i-444368d6</td>
+                      <td md-cell="md-cell" style="text-align: center">t2.medium</td>
+                      <td md-cell="md-cell" style="text-align: center"><i class="glyph-icon icon-circle" style="color: red" title=".icon-circle"></i>                            stopped</td>
+                      <td md-cell="md-cell" style="text-align: center">us-east-1d</td>
+                    </tr>
+                    <tr md-row="md-row">
+                      <td md-cell="md-cell" style="text-align: center">
+                        <input id="todo-1" type="checkbox" name="todo-1"/>
+                      </td>
+                      <td md-cell="md-cell" style="text-align: center">LoadSwarm</td>
+                      <td md-cell="md-cell" style="text-align: center">i-5673cacc</td>
+                      <td md-cell="md-cell" style="text-align: center">t2.micro</td>
+                      <td md-cell="md-cell" style="text-align: center"><i class="glyph-icon icon-circle" style="color: limegreen" title=".icon-circle"></i>                            running</td>
+                      <td md-cell="md-cell" style="text-align: center">us-east-1d</td>
+                    </tr>
+                    <tr md-row="md-row">
+                      <td md-cell="md-cell" style="text-align: center">
+                        <input id="todo-1" type="checkbox" name="todo-1"/>
+                      </td>
+                      <td md-cell="md-cell" style="text-align: center">es-kibana</td>
+                      <td md-cell="md-cell" style="text-align: center">i-00d66265d</td>
+                      <td md-cell="md-cell" style="text-align: center">t2.medium</td>
+                      <td md-cell="md-cell" style="text-align: center"><i class="glyph-icon icon-circle" style="color: limegreen" title=".icon-circle"></i>                            running</td>
+                      <td md-cell="md-cell" style="text-align: center">us-east-1b</td>
+                    </tr>
+                    <tr md-row="md-row">
+                      <td md-cell="md-cell" style="text-align: center">
+                        <input id="todo-1" type="checkbox" name="todo-1"/>
+                      </td>
+                      <td md-cell="md-cell" style="text-align: center">selenium-test</td>
+                      <td md-cell="md-cell" style="text-align: center">i-256t889r</td>
+                      <td md-cell="md-cell" style="text-align: center">t2.medium</td>
+                      <td md-cell="md-cell" style="text-align: center"><i class="glyph-icon icon-circle" style="color: red" title=".icon-circle"></i>                            stopped</td>
+                      <td md-cell="md-cell" style="text-align: center">us-east-1c</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="form-group" *ngIf="options.name == 'Stack'">
+            <div class="row">
+              <div class="col-sm-1"><i class="glyph-icon tooltip-button demo-icon icon-database" style="color: orangered" title="" data-original-title=".icon-database"></i></div>
+              <div class="col-sm-5">
+                <h3 class="font-bold">Database Server</h3>
+              </div>
+            </div>
+            <div class="example-box-wrapper">
+              <div class="scrollable grids-table layout-column flex" layout="layout" flex="flex">
+                <table class="table table-bordered table-striped table-2-columns flex" div="div" flex="flex">
+                  <thead md-head="md-head" md-order="query.order">
+                    <tr md-row="md-row">
+                      <th md-column="md-column" style="text-align: center"></th>
+                      <th md-column="md-column" style="text-align: center">Name</th>
+                      <th md-column="md-column" style="text-align: center">Instance ID</th>
+                      <th md-column="md-column" style="text-align: center">Instance Type</th>
+                      <th md-column="md-column" style="text-align: center">Status</th>
+                      <th md-column="md-column" style="text-align: center">Availability Zone</th>
+                    </tr>
+                  </thead>
+                  <tbody md-body="md-body">
+                    <tr md-row="md-row">
+                      <td md-cell="md-cell" style="text-align: center">
+                        <input id="todo-1" type="checkbox" name="todo-1"/>
+                      </td>
+                      <td md-cell="md-cell" style="text-align: center">Core Services</td>
+                      <td md-cell="md-cell" style="text-align: center">i-267768f5</td>
+                      <td md-cell="md-cell" style="text-align: center">t2.small</td>
+                      <td md-cell="md-cell" style="text-align: center"><i class="glyph-icon icon-circle" style="color: limegreen" title=".icon-circle"></i>                            running</td>
+                      <td md-cell="md-cell" style="text-align: center">us-east-1c</td>
+                    </tr>
+                    <tr md-row="md-row">
+                      <td md-cell="md-cell" style="text-align: center">
+                        <input id="todo-1" type="checkbox" name="todo-1"/>
+                      </td>
+                      <td md-cell="md-cell" style="text-align: center">Billing Services</td>
+                      <td md-cell="md-cell" style="text-align: center">i-444368d6</td>
+                      <td md-cell="md-cell" style="text-align: center">t2.medium</td>
+                      <td md-cell="md-cell" style="text-align: center"><i class="glyph-icon icon-circle" style="color: red" title=".icon-circle"></i>                            stopped</td>
+                      <td md-cell="md-cell" style="text-align: center">us-east-1d</td>
+                    </tr>
+                    <tr md-row="md-row">
+                      <td md-cell="md-cell" style="text-align: center">
+                        <input id="todo-1" type="checkbox" name="todo-1"/>
+                      </td>
+                      <td md-cell="md-cell" style="text-align: center">LoadSwarm</td>
+                      <td md-cell="md-cell" style="text-align: center">i-5673cacc</td>
+                      <td md-cell="md-cell" style="text-align: center">t2.micro</td>
+                      <td md-cell="md-cell" style="text-align: center"><i class="glyph-icon icon-circle" style="color: limegreen" title=".icon-circle"></i>                            running</td>
+                      <td md-cell="md-cell" style="text-align: center">us-east-1d</td>
+                    </tr>
+                    <tr md-row="md-row">
+                      <td md-cell="md-cell" style="text-align: center">
+                        <input id="todo-1" type="checkbox" name="todo-1"/>
+                      </td>
+                      <td md-cell="md-cell" style="text-align: center">es-kibana</td>
+                      <td md-cell="md-cell" style="text-align: center">i-00d66265d</td>
+                      <td md-cell="md-cell" style="text-align: center">t2.medium</td>
+                      <td md-cell="md-cell" style="text-align: center"><i class="glyph-icon icon-circle" style="color: limegreen" title=".icon-circle"></i>                            running</td>
+                      <td md-cell="md-cell" style="text-align: center">us-east-1b</td>
+                    </tr>
+                    <tr md-row="md-row">
+                      <td md-cell="md-cell" style="text-align: center">
+                        <input id="todo-1" type="checkbox" name="todo-1"/>
+                      </td>
+                      <td md-cell="md-cell" style="text-align: center">selenium-test</td>
+                      <td md-cell="md-cell" style="text-align: center">i-256t889r</td>
+                      <td md-cell="md-cell" style="text-align: center">t2.medium</td>
+                      <td md-cell="md-cell" style="text-align: center"><i class="glyph-icon icon-circle" style="color: red" title=".icon-circle"></i>                            stopped</td>
+                      <td md-cell="md-cell" style="text-align: center">us-east-1c</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</mat-card> 

@@ -1,0 +1,13 @@
+<div ngbDropdown class="custom-select-box">
+  <button ngbDropdownToggle class="btn btn-default layout-row layout-align-center-center">
+  	<span *ngIf="!staticText" class="flex">
+	  	<span [hidden]="selectedItem">Select item</span>
+	  	<span *ngIf="selectedItem && !shortName">{{selectedItem[nameField]}}</span>
+	  	<span *ngIf="selectedItem && shortName">{{selectedItem[shortName]}}</span>
+  	</span>
+  	<span *ngIf="staticText" class="flex">{{staticText}}</span>
+  </button>
+  <ul ngbDropdownMenu class="dropdown-menu-right">
+    <li class="dropdown-item" *ngFor="let item of items"><a (click)="selectItem(item)">{{item[nameField]}}</a></li>
+  </ul>
+</div>

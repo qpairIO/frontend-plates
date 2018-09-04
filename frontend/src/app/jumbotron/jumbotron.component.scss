@@ -1,0 +1,26 @@
+@import 'variables';
+
+.app-jumbotron {
+  min-height: 100vh;
+  background: $primary-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  padding: 10px;
+  .jumbo-col-right {
+    max-width: 500px;
+    h1 {
+      color: white;
+    }
+    .get-started-button {
+      padding: 10px 15px;
+      font-size: 20px;
+    }
+  }
+}
+
+.jumbo-image {
+  padding: 20px;
+}

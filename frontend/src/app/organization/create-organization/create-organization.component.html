@@ -1,0 +1,23 @@
+<div id="cost-analysis" layout="column" flex="flex" class="scrollable screen-content" style="overflow: visible;">
+  <mat-toolbar class="layout-align-start-center layout-row">
+    <i class="glyph-icon icon-cog" style="color:Yellow" title=".icon-cog"></i>
+    <span clas="title"> Create new organization </span>
+  </mat-toolbar>
+  <mat-card>
+  	<div class="content-box-wrapper scrollable" flex="flex">
+      <div class="row">
+        <div class="col-md-6">
+          <label class="form-group" layout="column"><span>Name</span>
+            <input class="form-control" [(ngModel)]="item.name"  required="required"/>
+          </label>
+          <label class="form-group" layout="column"><span>Description</span>
+            <textarea class="form-control" [(ngModel)]="item.description" ></textarea>
+          </label><br/>
+          <div class="text-center">
+            <button class="btn btn-info" [disabled]="!item.name" (click)="create()">Create</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+ </div>
