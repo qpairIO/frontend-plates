@@ -3,7 +3,7 @@
     <h2 class="text-center">Login or <a routerLink="/register">Sign up</a></h2><br/>
     <div *ngIf="isSubmit && loginFailed" class="alert alert-danger">Login failed, please check your username and password</div>
     <div class="row form-group">
-      <div class="col-md-6"><a class="btn btn-social btn-lg btn-default btn-github" href="/auth/github">Github</a></div>
+      <div class="col-md-6"><a class="btn btn-social btn-lg btn-default btn-github" href="facebookAuth()">Facebook</a></div>
       <div class="col-md-6"><a class="btn btn-social btn-lg btn-default btn-google" (click)="googleAuth()">Google+</a></div>
     </div>
     <form name="loginForm" method="post" >

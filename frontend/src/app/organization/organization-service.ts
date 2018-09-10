@@ -13,7 +13,7 @@ export class OrganizationService {
 
   constructor(private resourceService: ResourceService, private http: HttpClient) {
     this.organizationId = {organizationId: '6f5d4e52-a766-44b4-a476-cf95629ba138'};
-    this.apiUrl = "http://loadswarmbackend.deploybytes.com/";
+    this.apiUrl = "http://r3bjmf68ra.execute-api.us-east-1.amazonaws.com/";
   }
   private get resourceName(): string {
     return `project-data-by-event`;

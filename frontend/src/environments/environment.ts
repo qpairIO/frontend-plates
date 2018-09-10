@@ -7,5 +7,5 @@ import {Environment} from './environment.model';
 export const environment: Environment = {
   production: false,
   api: 'https://t5rtz6drn4.execute-api.us-east-1.amazonaws.com/dev',
-  apiLogin: 'http://loadswarmbackend.deploybytes.com'
+  apiLogin: 'http://r3bjmf68ra.execute-api.us-east-1.amazonaws.com/dev'
 };

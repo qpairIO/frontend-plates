@@ -5,7 +5,9 @@
     position: relative;
     margin: 100px auto;
 }
-
+#form-page .input-group .form-control, #form-page .input-group-addon, .input-group-btn{
+  flex-direction: inherit
+}
 .double-bounce1, .double-bounce2 {
     width: 100%;
     height: 100%;

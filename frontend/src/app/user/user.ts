@@ -1,12 +1,13 @@
-import {Resource, ResourceWithoutId} from '@tsmean/shared';
+import { Resource, ResourceWithoutId } from '@tsmean/shared';
 
 interface UserFields {
   email: string;
   firstName: string;
   lastName: string;
-  organizationName: any;
+  role: any;
   organizationId: any;
+  organizationName: any;
 }
 
-export interface User extends Resource, UserFields {}
-export interface UserWithoutId extends ResourceWithoutId, UserFields {}
+export interface User extends Resource, UserFields { }
+export interface UserWithoutId extends ResourceWithoutId, UserFields { }

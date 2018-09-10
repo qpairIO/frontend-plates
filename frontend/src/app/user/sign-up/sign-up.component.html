@@ -2,8 +2,12 @@
   <div class="main-form" id="register-form">
     <h2 class="text-center">Register</h2><br/>
     <form name="registerForm">
-      <div class="input-group form-group"><span class="input-group-addon">Organization name</span>
-        <input class="form-control" [(ngModel)]="newUser.organizationName" name="organizationName" type="text" required="required"/>
+      <div class="input-group form-group"><span class="input-group-addon">Role</span>
+        <select class="form-control dropdown-runtest" >
+        
+          <option [ngValue]="newUser.role" value="{{role.value}}" *ngFor="let role of  roles" >{{role.name}}</option>
+        </select>
+  
       </div>
       <div class="input-group form-group"><span class="input-group-addon">First Name</span>
         <input class="form-control" [(ngModel)]="newUser.firstName" name="firstName" type="text" required="required"/>

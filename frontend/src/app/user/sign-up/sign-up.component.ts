@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
-import {NotifyService} from '@tsmean/toast';
-import {Router} from '@angular/router';
+import { Component } from '@angular/core';
+import { NotifyService } from '@tsmean/toast';
+import { Router } from '@angular/router';
 
-import {LoginService} from '../login.service';
-import {UserService} from '../user.service';
-import {UserWithoutId} from '../user';
-import {UserStore} from '../user.store';
+import { LoginService } from '../login.service';
+import { UserService } from '../user.service';
+import { UserWithoutId } from '../user';
+import { UserStore } from '../user.store';
 
 @Component({
   selector: 'app-user-sign-up',
@@ -17,9 +17,15 @@ export class SignUpComponent {
     email: '',
     firstName: '',
     lastName: '',
-    organizationName: '',
-    organizationId: ''
+    role: 'CHEF',
+    organizationId: 1,
+    organizationName: 'New Org'
   };
+
+  public roles = [
+    { 'name': 'Chef', 'value': 'CHEF' },
+    { 'name': 'Diner', 'value': 'DINER' }
+  ];
 
   password = '';
 
@@ -29,7 +35,7 @@ export class SignUpComponent {
     private loginService: LoginService,
     private userStore: UserStore,
     private router: Router
-  ) {}
+  ) { }
 
   doSignUp() {
     this.userService.createUser(this.newUser, this.password).subscribe(user => {

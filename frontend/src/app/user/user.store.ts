@@ -14,8 +14,9 @@ export class UserStore {
       email: '',
       firstName: '',
       lastName: '',
-      organizationName:'',
+      role: '',
       organizationId:'',
+      organizationName:'',
       id: -1
     });
     let userJson:any, user:User;
